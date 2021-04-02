@@ -12,6 +12,7 @@ import TestParamNone from './pages/TestParamNone';
 import About from './pages/About';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
+import AddPost from './pages/addPost';
 
 import NoftCard from './components/NoftCard';
 
