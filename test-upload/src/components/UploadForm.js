@@ -17,11 +17,11 @@ import "firebase/auth";
 import "firebase/firestore";
 import 'firebase/storage'
 
+let signedIn = false;
+
 // Upload Form component
 export default function UploadForm(props) {
 
-    // TODO: Replace the following with your app's Firebase project configuration
-    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
     var firebaseConfig = {
         apiKey: "AIzaSyAtTwL6D5trrLf1h2xtTnGkMMzoralDl2o",
         authDomain: "reprint-fd4e0.firebaseapp.com",
@@ -39,6 +39,23 @@ export default function UploadForm(props) {
             console.error("Firebase initialization error raised", err.stack)
         }
     }
+
+    if(!signedIn) {
+        firebase.auth().signInWithEmailAndPassword("weffung@ucdavis.edu", "firebase-cloud-login-123")
+            .then((userCredential) => {
+                // Signed in 
+                var user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                debugger;
+                // ..
+            });
+            signedIn = true;
+    }
+
 
     // Get a reference to the storage service, which is used to create references in your storage bucket
     // var storage = firebase.storage();
