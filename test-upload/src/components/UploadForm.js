@@ -59,7 +59,7 @@ export default function UploadForm(props) {
 
     // Get a reference to the storage service, which is used to create references in your storage bucket
     // var storage = firebase.storage();
-    const storageRef = firebase.storage().ref().child("images")
+    const storageRef = firebase.storage().ref().child("images");
 
     // State to keep track of selected file
     const initialState = {
@@ -87,12 +87,19 @@ export default function UploadForm(props) {
 
         
         await storageRef.put(state.selectedFile)
-        .then(snapshot => {
-            console.log('Uploaded.');
-        });
+        .then((snapshot) => {
+            console.log("Uploading started");
+            return snapshot.ref.getDownloadURL();
+        }).then(downloadURL=>{
+            console.log('Uploaded:');
+            console.log({asset: downloadURL});
 
-        // TODO: Make request to cloud server
-        // Send formData object
+            //TODO: Send downloadURL to mongoose, probably using a mutation
+
+            
+        }).catch(error => {
+            throw error;
+        });
 
     }; // onFileUpload
 
