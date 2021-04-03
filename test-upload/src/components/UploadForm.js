@@ -19,21 +19,26 @@ import 'firebase/storage'
 
 // Generate random hash for filenames
 import generateHash from 'random-hash';
+import process from "process";
 
 let signedIn = false;
 
 // Upload Form component
 export default function UploadForm(props) {
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyAtTwL6D5trrLf1h2xtTnGkMMzoralDl2o",
-        authDomain: "reprint-fd4e0.firebaseapp.com",
-        projectId: "reprint-fd4e0",
-        storageBucket: "reprint-fd4e0.appspot.com",
-        messagingSenderId: "828177439574",
-        appId: "1:828177439574:web:e8f5e5cf9759e48c9f94f7"
-      };
+    // var firebaseConfig = {
+    //     apiKey: "AIzaSyAtTwL6D5trrLf1h2xtTnGkMMzoralDl2o",
+    //     authDomain: "reprint-fd4e0.firebaseapp.com",
+    //     projectId: "reprint-fd4e0",
+    //     storageBucket: "reprint-fd4e0.appspot.com",
+    //     messagingSenderId: "828177439574",
+    //     appId: "1:828177439574:web:e8f5e5cf9759e48c9f94f7"
+    //   };
     
+    console.log(process.env);
+    debugger;
+    let firebaseConfig = process.env.storage;
+
     // Initialize Firebase
     if (!firebase.apps.length) {
         try {
@@ -48,13 +53,11 @@ export default function UploadForm(props) {
             .then((userCredential) => {
                 // Signed in 
                 var user = userCredential.user;
-                // ...
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                debugger;
-                // ..
+                throw JSON.stringify({errorCode, errorMessage});
             });
             signedIn = true;
     }
