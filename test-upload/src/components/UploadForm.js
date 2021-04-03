@@ -76,7 +76,7 @@ export default function UploadForm(props) {
               Upload Image
             </h1>
             <div>
-                <input type="file" onChange={onFileChange} />
+                <input type="file" onChange={onFileChange} accept="image/*"/>
                 <button onClick={onFileUpload}>
                   Upload!
                 </button>
