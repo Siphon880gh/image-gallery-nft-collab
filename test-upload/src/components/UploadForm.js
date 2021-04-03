@@ -111,67 +111,50 @@ export default function UploadForm(props) {
 
         if (state.selectedFile) {
 
-            return ( <
-                div >
-                <
-                h2 > Image Selected from computer: < /h2>
+            return ( <div >
+                <h2> Image Selected from computer: </h2>
 
-                <
-                p > Filename: { state.selectedFile.name } < /p>
+                <p> Filename: { state.selectedFile.name } </p>
 
 
-                <
-                p > File Type: { state.selectedFile.type } < /p>
+                <p> File Type: { state.selectedFile.type } </p>
 
 
-                <
-                p >
-                Last Modified: { " " } { state.selectedFile.lastModifiedDate.toDateString() } <
-                /p>
+                <p>Last Modified: { " " } { state.selectedFile.lastModifiedDate.toDateString() } </p>
 
-                <
-                /div>
+                </div>
             );
         } else {
-            return ( <
-                div >
-                <
-                br / >
-                <
-                h4 > Choose file, then upload! < /h4> <
-                /div>
+            return ( <div>
+                <br/>
+                <h4> Choose file, then upload! </h4> </div>
             );
         }
     }; // formData
 
 
     // Render upload form
-    return ( <
-        div >
-        <
-        h1 >
-        Upload Image <
-        /h1> <
-        div >
-        <
-        input type = "file"
-        onChange = { onFileChange }
-        accept = "image/*" / >
-        <
-        button onClick = { onFileUpload } >
-        Upload!
-        <
-        /button> <
-        /div> <
-        aside > { fileData() } <
-        /aside>
+    return ( 
+        <div>
+            <h1>
+                Upload Image
+            </h1>
 
-        <
-        article >
-        <
-        h2 > Debug Google Cloud Service Account details: < /h2> <
-        p > { process.env.GOOGLE_APPLICATION_CREDENTIALS } < /p> <
-        /article> <
-        /div>
+            <div>
+                <input type = "file" onChange = { onFileChange } accept = "image/*" />
+                <button onClick = { onFileUpload } >
+                    Upload!
+                </button>
+            </div>
+            
+            <aside>
+                { fileData() }
+            </aside>
+
+            <article >
+                <h2 > Debug Google Cloud Service Account details: </h2>
+                <p > { process.env.GOOGLE_APPLICATION_CREDENTIALS } </p> 
+            </article>
+        </div>
     )
 }
