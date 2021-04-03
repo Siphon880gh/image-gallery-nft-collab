@@ -17,6 +17,9 @@ import "firebase/auth";
 import "firebase/firestore";
 import 'firebase/storage'
 
+// Generate random hash for filenames
+import generateHash from 'random-hash';
+
 let signedIn = false;
 
 // Upload Form component
@@ -58,8 +61,8 @@ export default function UploadForm(props) {
 
 
     // Get a reference to the storage service, which is used to create references in your storage bucket
-    // var storage = firebase.storage();
-    const storageRef = firebase.storage().ref().child("images");
+    const uniqueFilename = Math.floor(new Date().getTime()) + generateHash({ length: 6 });
+    const storageRef = firebase.storage().ref().child(uniqueFilename);
 
     // State to keep track of selected file
     const initialState = {
