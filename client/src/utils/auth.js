@@ -28,6 +28,33 @@ class AuthService {
     }
   }
 
+  // extract google auth
+  getGoogleAuth() {
+    const token = this.getToken();
+    try {
+      const decoded = decode(token);
+      const json = decoded.data.secretGoogleCloudAuth;
+      const primitive = JSON.parse(json);
+      return primitive;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  // extract google storage
+  getGoogleStorage() {
+    const token = this.getToken();
+    try {
+      const decoded = decode(token);
+      // console.log({decoded});
+      const json = decoded.data.secretGoogleCloudStorage;
+      const primitive = JSON.parse(json);
+      return primitive;
+    } catch (err) {
+      return false;
+    }
+  }
+
   getToken() {
     // Retrieves the user token from localStorage
     return localStorage.getItem('id_token');

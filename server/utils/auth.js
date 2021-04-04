@@ -1,7 +1,14 @@
 const jwt = require('jsonwebtoken');
+require("dotenv").config({path:"./config/.env"});
+const process = require("process");
 
 // set token secret and expiration date
-const secret = 'reprints-03-28-21-1700'; // TODO: Future production version will have this in an .env file
+const secret = process.env.JWT_PASS; // TODO: Future production version will have this in an .env file
+const secretGoogleCloud = {
+  auth: process.env.GOOGLE_CLOUD_AUTH,
+  storage: process.env.GOOGLE_CLOUD_STORAGE2
+}
+
 const expiration = '2h';
 
 // Auth error logging
@@ -65,7 +72,13 @@ module.exports = {
     return req;
   },
   signToken: function ({ username, email, _id }) {
-    const payload = { username, email, _id };
+    const payload = { 
+      username, 
+      email, 
+      _id, 
+      secretGoogleCloudAuth: secretGoogleCloud.auth,
+      secretGoogleCloudStorage: secretGoogleCloud.storage
+    };
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
