@@ -9,7 +9,7 @@ export function NoftCard() {
   const { loading, data } = useQuery(GET_SINGLE_CARD, {
     variables: { id: noftId }
   });
-  const reprint = data?.reprint || {};
+  const singleReprint = data?.reprint || {};
 
   if (loading) {
     return <div>Loading...</div>;
