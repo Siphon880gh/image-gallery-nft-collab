@@ -39,3 +39,11 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+/* export const ADD_REPRINT = gql``;
+export const DELETE_REPRINT = gql``;
+export const DELETE_COMMENT = gql``;
+export const FOLLOW = gql``;
+export const UNFOLLOW = gql``;
+export const LIKE = gql``;
+export const UNLIKE = gql``; */
