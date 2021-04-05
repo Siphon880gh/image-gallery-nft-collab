@@ -12,11 +12,9 @@ const CommentList = ({ comments }) => {
                 {comments &&
                     comments.map(comments => (
                         <p key={comments._id}>
-                            {comments.commentBody} //{' '}
+                           " {comments.commentBody} " - {' '}
                             <Link to={`/profile/${comments.author}`} style={{ fontWeight: 700 }}>
-                                {comments.author}</Link> on {comments.createdAt}
-
-                        </p>
+                                {comments.author}</Link></p>
                     ))}
             </div>
         </div>

@@ -1,10 +1,8 @@
 // Create a skeletal structure of what our addPost page will look like
 // Set up imports at the top
 import React from 'react';
-import Image from 'react-bootstrap/Image'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
 
 import CommentList from '../components/CommentList';
