@@ -1,12 +1,12 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card, Button, Link } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER, GET_ME } from '../utils/queries';
-/* import NoftCard from '../components/NoftCard'; */
+import NoftCard from '../components/NoftCard';
 import Auth from '../utils/auth';
 
-const Profile2 = props => {
+const Profile = props => {
     const { username: userParam } = useParams();
 
     const { loading, data } = useQuery(userParam ? GET_USER : GET_ME, {
@@ -57,21 +57,21 @@ const Profile2 = props => {
             <p>Followed: {user.followedCount}</p>
             <p>Total Reprints: {user.reprintCount}</p>
             <p>Total Favorite Counts: {user.favoriteCount}</p>
+            <a href={`/favorites/${user.username}`}>See My Favorites</a>
 
-            {user.favorites.map((favorite, itrIndex) => {
+            {user.reprints.map((userReprint, itrIndex) => {
                 return (
-
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
-                            {console.log(favorite)}
-                            {console.log(favorite.asset)}
-                            <Card.Title ><Card.Link href={`/post/${favorite._id}`}>{favorite.title}</Card.Link></Card.Title>
-                            <Card.Img variant="top" src={favorite.asset} />
-                            <Card.Text><span role="img" aria-label="like emoji">👍</span>{favorite.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{favorite.commentCount}</Card.Text>
-                            <Card.Text>NoFT Author: <Card.Link href={`/profile/${favorite.author}`}>{favorite.author}</Card.Link> </Card.Text>
+                            <Card.Title ><Card.Link href={`/post/${userReprint.title}`}>{userReprint.title}</Card.Link></Card.Title>
+                            <Card.Img variant="top" src={userReprint.asset} />
+                            <Card.Text><span role="img" aria-label="like emoji">👍</span>{userReprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{userReprint.commentCount}</Card.Text>
+                            <Card.Text>NoFT Author: <Card.Link href={`/profile/${userReprint.author}`}>{userReprint.author}</Card.Link> </Card.Text>
                             <Button variant="primary">Download</Button>
                         </Card.Body>
                     </Card>
+
+
                 );
             })}
 
@@ -79,4 +79,4 @@ const Profile2 = props => {
     );
 };
 
-export default Profile2;
+export default Profile;

@@ -91,11 +91,6 @@ query author($username: String!) {
     reprintCount
     favorites {
       _id
-    title
-    asset
-    author
-    commentCount
-    likeCount
     }
     favoriteCount
     followers{
@@ -136,14 +131,14 @@ query reprint($id: ID!){
   }
 }`;
 
-/* export const GET_FAVORITES = gql`
-query favorites($username: String!) {
-  favorites(username: $username) {
-    username
-    favorites {
-      _id
+export const GET_FAVORITES = gql`
+query findFavorites($id: ID!) {
+  favorites(_id: $_id) {
+    _id
     title
     asset
-    }
+    author
+    likeCount
+    commentCount
   }
 }` */
