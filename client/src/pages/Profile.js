@@ -65,7 +65,10 @@ const Profile = props => {
                         <Card.Body>
                             <Card.Title ><Card.Link href={`/post/${userReprint.title}`}>{userReprint.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={userReprint.asset} />
-                            <Card.Text><span role="img" aria-label="like emoji">👍</span>{userReprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{userReprint.commentCount}</Card.Text>
+                            <Card.Text><img src="../assets/heartIconEmpty.png"
+                                width="25"
+                                height="25"
+                                alt="Noft Custom Icon" />{userReprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{userReprint.commentCount}</Card.Text>
                             <Card.Text>NoFT Author: <Card.Link href={`/profile/${userReprint.author}`}>{userReprint.author}</Card.Link> </Card.Text>
                             <Button variant="primary">Download</Button>
                         </Card.Body>

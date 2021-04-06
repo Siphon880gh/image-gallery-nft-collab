@@ -25,7 +25,10 @@ export function Home() {
                 <Card.Body>
                   <Card.Title ><Card.Link href={`/post/${reprint.title}`}>{reprint.title}</Card.Link></Card.Title>
                   <Card.Img variant="top" src={reprint.asset} />
-                  <Card.Text><span role="img" aria-label="like emoji">👍</span>{reprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{reprint.commentCount}</Card.Text>
+                  <Card.Text><img src="../assets/heartIconEmpty.png"
+                    width="25"
+                    height="25"
+                    alt="Noft Custom Icon" />{reprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{reprint.commentCount}</Card.Text>
                   <Card.Text>NoFT Author: <Card.Link href={`/profile/${reprint.author}`}>{reprint.author}</Card.Link> </Card.Text>
                   <Button variant="primary">Download</Button>
                 </Card.Body>
