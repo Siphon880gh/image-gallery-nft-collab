@@ -37,7 +37,7 @@ const CommentForm = ({ reprintId }) => {
     };
 
     return (
-        <section>
+        <React.Fragment>
             <Form onSubmit={handleFormSubmit} >
 
                 <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
@@ -46,7 +46,7 @@ const CommentForm = ({ reprintId }) => {
                 </p>
 
                 <Form.Group controlId="commentForm" value={commentBody} onChange={handleChange}>
-                    <Form.Control placeholder= "Leave a comment about this NoFT..." as="textarea" rows={3} />
+                    <Form.Control placeholder="Leave a comment about this NoFT..." as="textarea" rows={3} />
                 </Form.Group>
 
                 {/* <textarea
@@ -59,7 +59,7 @@ const CommentForm = ({ reprintId }) => {
             </Form>
 
             {error && <div>Something went wrong...</div>}
-        </section>
+        </React.Fragment>
     );
 };
 
