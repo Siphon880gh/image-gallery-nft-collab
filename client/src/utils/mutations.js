@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-
+//confirmed working 
 export const LOGIN_USER = gql`
   mutation login($username: String!, $password: String!) {
     login(username: $username, password: $password) {
@@ -11,7 +11,7 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
+//confirmed working
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -24,7 +24,7 @@ export const ADD_USER = gql`
     }
   }
 `;
-
+//confirmed working 
 export const ADD_COMMENT = gql`
   mutation addComment($reprintId: ID!, $commentBody: String!) {
     addComment(reprintId: $reprintId, commentBody: $commentBody) {
