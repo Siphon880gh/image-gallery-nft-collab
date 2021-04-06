@@ -4,8 +4,9 @@ import { Container, Card, Button } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER, GET_ME } from '../utils/queries';
 
-import HeartIcon from '../assets/drawnHeartIcon.png';
-import CommentIcon from '../assets/drawnCommentIcon.png';
+
+import LikeIcon from '../assets/likeArrowBoxIcon.png';
+import CommentIcon from '../assets/commentIconBox.png';
 import Auth from '../utils/auth';
 
 const Profile = props => {
@@ -68,7 +69,7 @@ const Profile = props => {
                         <Card.Body>
                             <Card.Title ><Card.Link href={`/post/${userReprint.title}`}>{userReprint.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={userReprint.asset} />
-                            <Card.Text><img src={HeartIcon}
+                            <Card.Text><img src={LikeIcon}
                                 width="25"
                                 height="25"
                                 alt="Noft Custom Icon" />{userReprint.likeCount}<img src={CommentIcon}

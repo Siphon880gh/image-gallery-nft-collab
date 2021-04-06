@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Form, FormControl, Button, CardDeck } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Form, FormControl, Button } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-
+import SearchButton from '../assets/searchIconBox.png';
+import AddPostIcon from '../assets/addIcon.png';
+import FaveBoxIcon from '../assets/heartBoxIcon.png'
 import NoftLogo from '../assets/noftFULL2.png';
 import Auth from '../utils/auth';
 
@@ -27,7 +29,15 @@ const AppNavbar = () => {
           </Navbar.Brand>
           <Form inline>
             <FormControl type="text" placeholder="Search NoFT..." className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <Button >
+              <img
+                src={SearchButton}
+                width="50"
+                height="50"
+                className="d-inline-block align-top"
+                alt="Search Button"
+              />
+            </Button>
           </Form>
           <Navbar.Toggle aria-controls='navbar-main' />
           <Navbar.Collapse id='navbar-main'>
@@ -36,10 +46,22 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/post/new'>
-                    Add Post
+                    <img
+                      src={AddPostIcon}
+                      width="50"
+                      height="50"
+                      className="d-inline-block align-top"
+                      alt="Add New NoFT"
+                    />
                   </Nav.Link>
                   <Nav.Link as={Link} to='/favorites'>
-                    Favorites
+                    <img
+                      src={FaveBoxIcon}
+                      width="50"
+                      height="50"
+                      className="d-inline-block align-top"
+                      alt="Favorite NoFTs Icon"
+                    />
                   </Nav.Link>
                   <Nav.Link as={Link} to='/profile/me'>Profile</Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>

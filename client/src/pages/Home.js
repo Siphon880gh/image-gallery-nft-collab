@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, Button, CardColumns, Container } from 'react-bootstrap';
 import { GET_STREAM } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
-import HeartIcon from '../assets/drawnHeartIcon.png';
-import CommentIcon from '../assets/drawnCommentIcon.png';
+import LikeIcon from '../assets/likeArrowBoxIcon.png';
+import CommentIcon from '../assets/commentIconBox.png';
 
 export function Home() {
   const { loading, data } = useQuery(GET_STREAM);
@@ -27,7 +27,7 @@ export function Home() {
                 <Card.Body>
                   <Card.Title ><Card.Link href={`/post/${reprint.title}`}>{reprint.title}</Card.Link></Card.Title>
                   <Card.Img variant="top" src={reprint.asset} />
-                  <Card.Text><img src={HeartIcon}
+                  <Card.Text><img src={LikeIcon}
                     width="25"
                     height="25"
                     alt="Noft Custom Icon" />{reprint.likeCount}<img src={CommentIcon}
