@@ -23,7 +23,7 @@ export function Home() {
         <CardColumns>
           {streamnofts.map((reprint, itrIndex) => {
             return (
-              <Card style={{ width: '18rem' }}>
+              <Card key={reprint._id} style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Title ><Card.Link href={`/post/${reprint.title}`}>{reprint.title}</Card.Link></Card.Title>
                   <Card.Img variant="top" src={reprint.asset} />
