@@ -7,7 +7,9 @@ const MeetTheTeam = () => {
 
     return (
         <div>
-            <img src={MeetTeam} />
+            <img src={MeetTeam}
+                alt="Custom NOFT title"
+            />
 
             <section>
                 <h2>About the NoFTeam</h2>

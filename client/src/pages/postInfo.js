@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
+import HeartIcon from '../assets/drawnHeartIcon.png';
+
 import Auth from '../utils/auth';
 import { GET_SINGLE_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
@@ -42,7 +44,7 @@ export function PostInfo() {
                     <Card.Title><Card.Link href={`/profile/${singleReprint.author}`}>{singleReprint.author}</Card.Link></Card.Title>
                     <Card.Title><Card.Link href={`${singleReprint.marketListing}`}>{singleReprint.marketListing}</Card.Link></Card.Title>
                     <Card.Title>{singleReprint.caption}</Card.Title>
-                    <Card.Title><img src="../assets/heartIconEmpty.png"
+                    <Card.Title><img src={HeartIcon}
                         width="25"
                         height="25"
                         alt="Noft Custom Icon" />{singleReprint.likeCount}</Card.Title>

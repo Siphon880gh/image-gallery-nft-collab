@@ -1,8 +1,9 @@
 import React from 'react';
-import { Redirect, useParams } from 'react-router-dom';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_ME, GET_FAVORITES } from '../utils/queries';
+import HeartIcon from '../assets/drawnHeartIcon.png';
+import CommentIcon from '../assets/drawnCommentIcon.png';
 import Auth from '../utils/auth';
 
 const Favorites = props => {
@@ -55,10 +56,13 @@ const Favorites = props => {
                         <Card.Body>
                             <Card.Title ><Card.Link href={`/post/${userReprint.title}`}>{userReprint.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={userReprint.asset} />
-                            <Card.Text><img src="../assets/heartIconEmpty.png"
+                            <Card.Text><img src={HeartIcon}
                                 width="25"
                                 height="25"
-                                alt="Noft Custom Icon" />{userReprint.likeCount}<span role="img" aria-label="comment emoji" >💬</span>{userReprint.commentCount}</Card.Text>
+                                alt="Noft Custom Icon" />{userReprint.likeCount}<img src={CommentIcon}
+                                    width="25"
+                                    height="25"
+                                    alt="Noft Custom Icon" />{userReprint.commentCount}</Card.Text>
                             <Card.Text>NoFT Author: <Card.Link href={`/profile/${userReprint.author}`}>{userReprint.author}</Card.Link> </Card.Text>
                             <Button variant="primary">Download</Button>
                         </Card.Body>
