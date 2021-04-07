@@ -35,7 +35,7 @@ export function Home() {
                       height="25"
                       alt="Noft Custom Icon" />{reprint.commentCount}</Card.Text>
                   <Card.Text>NoFT Author: <Card.Link href={`/profile/${reprint.author}`}>{reprint.author}</Card.Link> </Card.Text>
-                  <Button variant="primary">Download</Button>
+                  <Button variant="primary"><a href={`${reprint.asset}`} download>Download</a></Button>
                 </Card.Body>
               </Card>
             );

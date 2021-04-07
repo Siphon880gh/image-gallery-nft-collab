@@ -8,47 +8,47 @@ import "./FavoriteButton.css";
 
 // GraphQL
 import { FAVORITE, UNFAVORITE } from '../utils/mutations';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 
-export default function FavoriteButton({noftId, favoritedIds}) {
-  console.log({favoritedIds})
+export default function FavoriteButton({ noftId, favoritedIds }) {
+    console.log({ favoritedIds })
 
-  // Favoriting/Unfavoriting to graphQL
-  let [favorite] = useMutation(FAVORITE);
-  let [unfavorite] = useMutation(UNFAVORITE);
-  
-  let isFavoritedByMe = favoritedIds.includes(noftId);
-  let [favorited, setFavorite] = useState(isFavoritedByMe);
+    // Favoriting/Unfavoriting to graphQL
+    let [favorite] = useMutation(FAVORITE);
+    let [unfavorite] = useMutation(UNFAVORITE);
 
-  // handleFavorite toggles the favorite button style and also updates the User favorites regarding the current post
-  let handleFavorite = async(event) => {
-  
-    let handleButton = event.target;
-    let isFavoriting = handleButton.classList.contains("favoriting");
+    let isFavoritedByMe = favoritedIds.includes(noftId);
+    let [favorited, setFavorite] = useState(isFavoritedByMe);
 
-    if(isFavoriting) {
-        try {
-            favorite({
-                variables: { reprintId: noftId }
-            });
-        } catch (e) {
-            console.error(e);
-        }
-      } else {
-        try {
-            unfavorite({
-                variables: { reprintId: noftId }
-            });
-        } catch (e) {
-            console.error(e);
-        }
-      } // else
+    // handleFavorite toggles the favorite button style and also updates the User favorites regarding the current post
+    let handleFavorite = async (event) => {
 
-      event.target.classList.toggle("favoriting");
-  }; // handleFavorite
+        let handleButton = event.target;
+        let isFavoriting = handleButton.classList.contains("favoriting");
 
-  return (
-      <button className={favorited?"favorite-btn":"favorite-btn favoriting"} onClick={handleFavorite}/>
-  );
+        if (isFavoriting) {
+            try {
+                favorite({
+                    variables: { reprintId: noftId }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        } else {
+            try {
+                unfavorite({
+                    variables: { reprintId: noftId }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        } // else
+
+        event.target.classList.toggle("favoriting");
+    }; // handleFavorite
+
+    return (
+        <button className={favorited ? "favorite-btn" : "favorite-btn favoriting"} onClick={handleFavorite} />
+    );
 };
 // export default FavoriteButton;
