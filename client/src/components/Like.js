@@ -80,9 +80,9 @@ const Likes = function({singleReprint, otherAuth}) {
       <>
       {liked?<NotLikedIconJSX/>:<LikedIconJSX/>}
 
-      {Boolean(singleReprint.likeCount.length) ? (
+      {Boolean(singleReprint.likeCount) ? (
         <span>
-          <strong>{singleReprint.likeCount}</strong>
+          <strong>{singleReprint.likeCount} Likes</strong>
           <img
             img
             src={LikedIcon}
