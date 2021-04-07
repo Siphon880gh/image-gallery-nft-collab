@@ -1,4 +1,4 @@
-Reprint
+:sparkler: Reprint :sparkler:
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
@@ -26,7 +26,7 @@ Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worr
 ---
 Coming Soon
 
-Table of Contents
+:open_file_folder: Table of Contents
 ---
 - [Description](#description)
 - [Demo](#computer-demo)
