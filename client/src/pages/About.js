@@ -40,6 +40,26 @@ const About = () => {
             
             <h3>We do NOT provide NFTs</h3>
 
+            <p>
+                Instead, we provide their digital dopplegangers. Aka NoFTs.
+            </p>
+
+            <h2> Like that example above? </h2>
+            <p>
+                Exactly! You catch on fast. 
+            </p>
+            <p>
+                NoFT allows users to share, favorite, download, and discuss all of their favorite NFT works without actually interacting with real non-fungible tokens. 
+                All of the assets you see on this website are NoFTs, which are literally the publicly-available files. 
+            </p>
+
+            <h2>So a NoFT is just a non-unique mimic of an NFT?</h2>
+            <p>
+                Sort of! NoFT posts retain whatever file structure the asset is posted in and are NOT connected to an Ethereum blockchain asset. When you post a jpeg of an NFT you created/found/bought, you are posting the actual jpeg file, not a non-fungible token. 
+                When someone downloads this post, they are downloading the jpeg file, not a non-fungible token. At no point is the user directly interacting with an NFT when they are on our website. 
+                No changes to the chain-of-title, no interaction with cryptocurrency wallets, no financial transactions of any kind.
+            </p>
+
         </Container>
     </React.Fragment>);
 };
