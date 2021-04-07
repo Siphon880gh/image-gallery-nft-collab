@@ -21,7 +21,7 @@ export function PostInfo() {
     const { loading, data } = useQuery(GET_SINGLE_CARD, {
         variables: { noftId: noftId }
     });
-    const singleReprint = data?.reprint || {};
+    const singleReprint = data?.reprintById || {};
 
     if (loading) {
         return <div>Loading...</div>;
