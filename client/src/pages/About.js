@@ -24,6 +24,22 @@ const About = () => {
                 But we aren't here to discuss the vast and nuanced potentials of NFTs. We are here to share free stuff.
             </p>
 
+            <h2>I like free stuff!</h2>
+            <p>
+                Of course you do, we like free stuff too!
+            </p>
+
+            <h2>What kind of free stuff does NoFT offer?</h2>
+            <p>
+                We're glad you asked, esteemed and inquisitive. Here at NoFT we provide no NFTs. Zero.
+            </p>
+           
+            <p>
+                We'll repeat that for everyone
+            </p>
+            
+            <h3>We do NOT provide NFTs</h3>
+
         </Container>
     </React.Fragment>);
 };
