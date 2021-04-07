@@ -65,7 +65,7 @@ const Profile = props => {
 
             {user.reprints.map((userReprint, itrIndex) => {
                 return (
-                    <Card style={{ width: '18rem' }}>
+                    <Card key={userReprint._id} style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title ><Card.Link href={`/post/${userReprint._id}`}>{userReprint.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={userReprint.asset} />
