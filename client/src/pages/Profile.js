@@ -11,14 +11,13 @@ import Auth from '../utils/auth';
 
 const Profile = props => {
     const { username: userParam } = useParams();
-    const [follow] = useMutation(FOLLOW);
 
     const { loading, data } = useQuery(userParam ? GET_USER : GET_ME, {
         variables: { username: userParam }
     });
 
     const user = data?.me || data?.author || {};
-
+    const [follow] = useMutation(FOLLOW);
     // redirect to personal profile page if username is yours
     if (
         Auth.loggedIn() &&
@@ -36,7 +35,7 @@ const Profile = props => {
     const handleClick = async () => {
         try {
             await follow({
-                variables: { id: user._id }
+                variables: { followedId: user._id }
             });
         } catch (e) {
             console.error(e);
@@ -55,6 +54,7 @@ const Profile = props => {
             <p>Followed: {user.followedCount}</p>
             <p>Total Reprints: {user.reprintCount}</p>
             <p>Total Favorite Counts: {user.favoriteCount}</p>
+
             { Auth.loggedIn() && (
                 <button className="follow-btn" onClick={handleClick}>
                     Follow

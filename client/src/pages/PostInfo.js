@@ -34,7 +34,7 @@ export function PostInfo() {
     const handleClick = async () => {
         try {
             await favorite({
-                variables: { id: noftId }
+                variables: { reprintId: noftId }
             });
         } catch (e) {
             console.error(e);
