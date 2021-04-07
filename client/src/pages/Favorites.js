@@ -11,7 +11,6 @@ const Favorites = props => {
     const { loading, data } = useQuery(GET_ME, GET_FAVORITES);
 
     const user = data?.me || {};
-    const favorited = data?.findFavorites || [];
 
     // redirect to personal profile page if username is yours
     if (
@@ -24,27 +23,27 @@ const Favorites = props => {
     return (
         <Container>
             {console.log(user)}
-            {console.log(favorited)}
+            {console.log(user.favorites)}
 
 
             <h2>
                 Viewing Your Favorite Reprints.
         </h2>
 
-            {favorited.map((userReprint, itrIndex) => {
+            {user.favorites.map((favorites, itrIndex) => {
                 return (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
-                            <Card.Title ><Card.Link href={`/post/${userReprint._id}`}>{userReprint.title}</Card.Link></Card.Title>
-                            <Card.Img variant="top" src={userReprint.asset} />
+                            <Card.Title ><Card.Link href={`/post/${favorites._id}`}>{favorites.title}</Card.Link></Card.Title>
+                            <Card.Img variant="top" src={favorites.asset} />
                             <Card.Text><img src={HeartIcon}
                                 width="25"
                                 height="25"
-                                alt="Noft Custom Icon" />{userReprint.likeCount}<img src={CommentIcon}
+                                alt="Noft Custom Icon" />{favorites.likeCount}<img src={CommentIcon}
                                     width="25"
                                     height="25"
-                                    alt="Noft Custom Icon" />{userReprint.commentCount}</Card.Text>
-                            <Card.Text>NoFT Author: <Card.Link href={`/profile/${userReprint.author}`}>{userReprint.author}</Card.Link> </Card.Text>
+                                    alt="Noft Custom Icon" />{favorites.commentCount}</Card.Text>
+                            <Card.Text>NoFT Author: <Card.Link href={`/profile/${favorites.author}`}>{favorites.author}</Card.Link> </Card.Text>
                             <Button variant="primary">Download</Button>
                         </Card.Body>
                     </Card>
