@@ -6,9 +6,24 @@ const About = () => {
     return (<React.Fragment>
         <Container>
             <img src={AboutLogo}
-                alt="Noft Custom Icon" />
-            <p>                With the emergence of NFTs, there is a whole new digital-niche for us to explore. One that takes into account creativity, supply and demand, blockchain, and like a million other things. So how would one capitalize on it? Think of Nifty, a new marketplace for NFT’s. They’re killing it! Why don’t we do that? Probably because we’re not backed by a large software company with staff and money and better fin-tech than us. What can we do instead? An NFT Reprint Library! Where users can download Reprints of NFTs and share them with one another! Like Instagram -people +NFTs.
-</p>
+                alt="Noft Custom Icon" 
+            />
+            <h2>What are NoFTs?</h2>
+            <p>Before we explain what a NoFT is, let's describe what an NFT is first!</p>
+
+            <h2>What are NFTs?</h2>
+            <p>
+                Non-Fungible-Tokens (NFTs) are unique digital assets that are stored as Etherum blockchain. 
+                This means that every NFT is unique, thus making it non-fungible. 
+                These assets can range from images, gifs, audio files, video game items, and a multitude of other forms of digital creativity.
+                A caveat to this is that there is likely no tangible difference between an NFT of a digital asset and a copy of that NFT.
+            </p>
+
+            <p>
+                This being said, some people might think, "NFTs are completely worthless", and people are entitled to that belief.
+                But we aren't here to discuss the vast and nuanced potentials of NFTs. We are here to share free stuff.
+            </p>
+
         </Container>
     </React.Fragment>);
 };
