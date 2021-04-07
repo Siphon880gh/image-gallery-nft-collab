@@ -28,38 +28,37 @@ const Likes = function({singleReprint, otherAuth}) {
     setLiked(true);
   }
 
-  function renderLikeButton(like) {
-    if(liked)
-      return (<button
-              img
-              src={NotLikedIcon}
-              width="25"
-              height="25"
-              alt="Noft Not-Liked Icon"
-              onClick={() => {
-                likeNoft({ reprintId });
-                setLiked(true);
-              }}
-            >Unlike</button>
-      )
-    else
-      return (<button
-              img
-              src={LikedIcon}
-              width="25"
-              height="25"
-              alt="Noft Liked Icon"
-              onClick={() => {
-                unlikeNoft({ reprintId });
-                setLiked(false);
-              }}
-            >Like</button>
-      )
-  } // renderLikeButton
+  const notLikedIconJSX = (<button
+            img
+            src={NotLikedIcon}
+            width="25"
+            height="25"
+            alt="Noft Not-Liked Icon"
+            onClick={() => {
+              // likeNoft({ reprintId });
+              setLiked(true);
+            }}
+          >Unlike</button>
+  );
+  
+  const likedIconJSX = (<button
+          img
+          src={LikedIcon}
+          width="25"
+          height="25"
+          alt="Noft Liked Icon"
+          onClick={() => {
+            // unlikeNoft({ reprintId });
+            setLiked(false);
+          }}
+        >Like</button>
+  );
 
   return (
       <>
-      {renderLikeButton(liked)}
+      {
+        liked?notLikedIconJSX:likedIconJSX
+      }
 
       {Boolean(singleReprint.likeCount.length) ? (
         <span>
