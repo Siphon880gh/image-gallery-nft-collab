@@ -29,11 +29,11 @@ Coming Soon
 Table of Contents
 ---
 - [Description](#description)
-- [Demo](#:computer:-demo)
-- [Screenshot](#:camera:-screenshot)
-- [Resources Used](#:floppy_disk:-resources-used)
-- [Installation](#:minidisc:-installation)
-- [Contact Information](#:e-mail:-contact-information)
+- [Demo](#computer-demo)
+- [Screenshot](#camera-screenshot)
+- [Resources Used](#floppy_disk-resources-used)
+- [Installation](#minidisc-installation)
+- [Contact Information](#e-mail-contact-information)
 
 ## :floppy_disk: Resources Used
     Client Resources:
