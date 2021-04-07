@@ -12,13 +12,14 @@ Demo
 
 Screenshot
 ---
-Screenshot coming soon!
+Coming Soon
 
 Table of Contents
 ---
 - [Description](#description)
 - [Demo](#demo)
 - [Screenshot](#screenshot)
+- [Resources Used](#resources-used)
 - [Installation](#installation)
 - [Contact Information](#contact-information)
 
@@ -53,9 +54,8 @@ Table of Contents
       "jsonwebtoken": "^8.5.1",
       "mongoose": "^5.9.10"
 
-Installation
----
-Run npm install to download the necessary node modules. Then run npm run seed so you can see initial users and digital assets. On the app you can sign up for your own account.
+## Installation
+Install this project by clicking the *GREEN* button above, you can download it by ZIP or copy the SSH! When you load into VSCODE be sure to download the necessary node modules (npm run install). Then you'll want to type npm run seed so you can see initial users and digital assets. On the app you can sign up for your own account, you can create a post, follow, like a post, etcetera.
 
 ## Contact Information (In Alphabetical Order)
 - ### [AidanGuarniere](https://github.com/AidanGuarniere)
