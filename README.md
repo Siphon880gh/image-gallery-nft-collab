@@ -16,26 +16,26 @@ With the emergence of NFTs, there is a whole new digital-niche for us to explore
 That is where Reprint comes into play, with Reprint users can download and share Reprints of NFTs that are forever free. If you like a style, follow the artist to their actual NFT sales page. You can also browse trending reprints, create a collection of your personal favorites, and most importantly browse and appreciate what other artworks people enjoy!
 <br>
 <br>
-Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
+Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left: :point_left: :point_left:
 
-Demo
+:computer: Demo
 ---
 [Browse Reprint](https://reprint-media.herokuapp.com/)
 
-Screenshot
+:camera: Screenshot
 ---
 Coming Soon
 
 Table of Contents
 ---
 - [Description](#description)
-- [Demo](#demo)
-- [Screenshot](#screenshot)
-- [Resources Used](#resources-used)
-- [Installation](#installation)
-- [Contact Information](#contact-information)
+- [Demo](#:computer:-demo)
+- [Screenshot](#:camera:-screenshot)
+- [Resources Used](#:floppy_disk:-resources-used)
+- [Installation](#:minidisc:-installation)
+- [Contact Information](#:e-mail:-contact-information)
 
-## Resources Used
+## :floppy_disk: Resources Used
     Client Resources:
       "@apollo/react-hooks": "^3.1.5",
       "@google-cloud/firestore": "^4.9.8",
@@ -71,10 +71,10 @@ Table of Contents
       "graphql": "^15.5.0",
       "if-env": "^1.0.4"
 
-## Installation
+## :minidisc: Installation
 Install this project by clicking the *GREEN* button above, you can download it by ZIP or copy the SSH! When you load into VSCODE be sure to download the necessary node modules (npm run install). Then you'll want to type npm run seed so you can see initial users and digital assets. On the app you can sign up for your own account, you can create a post, follow, like a post, etcetera.
 
-## Contact Information
+## :e-mail: Contact Information
 - ### [AidanGuarniere](https://github.com/AidanGuarniere)
 - ### [clhurlbut](https://github.com/clhurlbut)
 - ### [jwilferd10](https://github.com/jwilferd10)
