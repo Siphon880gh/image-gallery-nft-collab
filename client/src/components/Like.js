@@ -11,22 +11,14 @@ const Likes = function({singleReprint, otherAuth}) {
   const myId = Auth.getProfile().data._id;
   const isLikedByMe = likedByIds.includes(myId);
 
-  // console.log("Below two types should match");
-  // console.log(typeof Auth.getProfile().data._id);
-  // console.log(typeof singleReprint.likes[0]);
-
-  // console.log("What is 0th index of like:", singleReprint.likes[0]._id);
-
   const [liked, setLiked] = useState(isLikedByMe);
   const [likeNoft] = useMutation(LIKE);
   const [unlikeNoft] = useMutation(UNLIKE);
-  let { _id: reprintId } = useParams();
+  let { noftId: reprintId } = useParams();
 
-  // console.log(Auth.getProfile().data._id);
+  // Debug
+  console.log({reprintId})
   console.log({isLikedByMe});
-  if (singleReprint.likes.includes(Auth.getProfile().data._id)) {
-    setLiked(true);
-  }
 
   const NotLikedIconJSX = ()=> {
     return (<button
@@ -35,7 +27,16 @@ const Likes = function({singleReprint, otherAuth}) {
             height="25"
             alt="Noft Not-Liked Icon"
             onClick={() => {
-              // likeNoft({ reprintId });
+              try {
+                unlikeNoft({ 
+                  variables: {
+                    reprintId 
+                }
+              })
+              } catch(e) {
+                console.error(e);
+              }
+
               setLiked(false);
             }}
           >Unlike</button>
@@ -49,7 +50,16 @@ const Likes = function({singleReprint, otherAuth}) {
           height="25"
           alt="Noft Liked Icon"
           onClick={() => {
-            // unlikeNoft({ reprintId });
+              try {
+                likeNoft({ 
+                  variables: {
+                    reprintId 
+                  }
+                  });
+              } catch(e) {
+                console.error(e);
+              }
+                
             setLiked(true);
           }}
         >Like</button>
