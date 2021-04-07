@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
-import { GET_ME, GET_FAVORITES } from '../utils/queries';
+import { GET_ME } from '../utils/queries';
 import HeartIcon from '../assets/drawnHeartIcon.png';
 import CommentIcon from '../assets/drawnCommentIcon.png';
 import Auth from '../utils/auth';
 
-const Favorites = props => {
+const Favorites = () => {
 
-    const { loading, data } = useQuery(GET_ME, GET_FAVORITES);
+    const { loading, data } = useQuery(GET_ME);
 
     const user = data?.me || {};
 
@@ -22,14 +22,9 @@ const Favorites = props => {
 
     return (
         <Container>
-            {console.log(user)}
-            {console.log(user.favorites)}
-
-
             <h2>
                 Viewing Your Favorite Reprints.
         </h2>
-
             {user.favorites.map((favorites, itrIndex) => {
                 return (
                     <Card style={{ width: '18rem' }}>
@@ -47,8 +42,6 @@ const Favorites = props => {
                             <Button variant="primary">Download</Button>
                         </Card.Body>
                     </Card>
-
-
                 );
             })}
 
