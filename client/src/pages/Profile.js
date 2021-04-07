@@ -44,6 +44,9 @@ const Profile = props => {
 
     return (
         <Container>
+            {console.log(userParam)}
+            {console.log(user)}
+            {console.log(data)}
             <div >
                 <h2>
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
@@ -62,7 +65,6 @@ const Profile = props => {
             )}
 
             <h2>{user.username}'s Reprints:</h2>
-
             {user.reprints.map((userReprint, itrIndex) => {
                 return (
                     <Card key={userReprint._id} style={{ width: '18rem' }}>
