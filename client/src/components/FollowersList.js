@@ -9,7 +9,7 @@ const FollowersList = ({ followedCount, username, followed }) => {
     return (
         <div>
             <h5>
-                {username}'s {followed} {followedCount === 1 ? 'Followed User' : 'Followed Users'}
+                {username}'s {followedCount === 1 ? 'Followed User' : 'Followed Users'}
             </h5>
             {followed.map(followed => (
                 <button key={followed._id}>
