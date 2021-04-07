@@ -29,14 +29,31 @@ const Likes = function({singleReprint, otherAuth}) {
   }
 
   function renderLikeButton(like) {
-    debugger;
     if(liked)
-      return (
-        <span>Unlike</span>
+      return (<button
+              img
+              src={NotLikedIcon}
+              width="25"
+              height="25"
+              alt="Noft Not-Liked Icon"
+              onClick={() => {
+                likeNoft({ reprintId });
+                setLiked(true);
+              }}
+            >Unlike</button>
       )
     else
-      return (
-        <span>Like</span>
+      return (<button
+              img
+              src={LikedIcon}
+              width="25"
+              height="25"
+              alt="Noft Liked Icon"
+              onClick={() => {
+                unlikeNoft({ reprintId });
+                setLiked(false);
+              }}
+            >Like</button>
       )
   } // renderLikeButton
 
