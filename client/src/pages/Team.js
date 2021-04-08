@@ -18,7 +18,7 @@ const MeetTheTeam = () => {
             </section>
 
             <section>
-                <h3>Name Example:</h3>
+                <h3>Aidan Guarniere</h3>
                 <Figure>
                     <Figure.Image
                         width={171}
@@ -27,14 +27,13 @@ const MeetTheTeam = () => {
                         src="holder.js/171x180"
                     />
                     <Figure.Caption>
-                        <p>Name:</p>
-                        <p>Github:</p>
-                        <p>Email:</p>
-                        <p>Description</p>
+                        <p><a href="https://github.com/AidanGuarniere" target="_blank" rel="noopener noreferrer">Github</a></p>
+                        <p><a href="https://www.linkedin.com/in/aidan-guarniere-56299719b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        <p>I like gardening, long walks on the beach, and MERN stack JavaScript. You can probably find me working on some code with a questionable amount of coffee nearby.</p>
                     </Figure.Caption>
                 </Figure>
 
-                <h3>Name Example:</h3>
+                <h3>Cassandra Hurlbut</h3>
                 <Figure>
                     <Figure.Image
                         width={171}
@@ -43,14 +42,13 @@ const MeetTheTeam = () => {
                         src="holder.js/171x180"
                     />
                     <Figure.Caption>
-                        <p>Name:</p>
-                        <p>Github:</p>
-                        <p>Email:</p>
-                        <p>Description</p>
+                        <p><a href="https://github.com/clhurlbut" target="_blank" rel="noopener noreferrer">Github</a></p>
+                        <p><a href="https://www.linkedin.com/in/cassandra-hurlbut-7165081b6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        <p></p>
                     </Figure.Caption>
                 </Figure>
 
-                <h3>Name Example:</h3>
+                <h3>Jonathan Wilferd</h3>
                 <Figure>
                     <Figure.Image
                         width={171}
@@ -59,14 +57,13 @@ const MeetTheTeam = () => {
                         src="holder.js/171x180"
                     />
                     <Figure.Caption>
-                        <p>Name:</p>
-                        <p>Github:</p>
-                        <p>Email:</p>
-                        <p>Description</p>
+                        <p><a href="https://github.com/jwilferd10" target="_blank" rel="noopener noreferrer">Github</a></p>
+                        <p><a href="https://www.linkedin.com/in/jonathan-wilferd-3a6b461b6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        <p></p>
                     </Figure.Caption>
                 </Figure>
 
-                <h3>Name Example:</h3>
+                <h3>Weng Fei Fung</h3>
                 <Figure>
                     <Figure.Image
                         width={171}
@@ -75,10 +72,9 @@ const MeetTheTeam = () => {
                         src="holder.js/171x180"
                     />
                     <Figure.Caption>
-                        <p>Name:</p>
-                        <p>Github:</p>
-                        <p>Email:</p>
-                        <p>Description</p>
+                        <p><a href="https://github.com/Siphon880gh/" target="_blank" rel="noopener noreferrer">Github</a></p>
+                        <p><a href="https://www.linkedin.com/in/weng-fung" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        <p></p>
                     </Figure.Caption>
                 </Figure>
             </section>
