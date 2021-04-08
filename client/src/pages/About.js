@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
+import { Link } from 'react-router-dom';
 import AboutLogo from '../assets/aboutTitle.png';
 const About = () => {
 
@@ -33,7 +34,7 @@ const About = () => {
                     </p>
                     <h4>We do NOT provide NFTs</h4>
                     <p>
-                    NoFT allows users to share, favorite, download, and discuss all of their favorite NFT works without actually interacting with real Non-Fungible-Tokens. All of the assets you see on this website are NoFTs, which are literally the publicly available files.
+                        NoFT allows users to share, favorite, download, and discuss all of their favorite NFT works without actually interacting with real Non-Fungible-Tokens. All of the assets you see on this website are NoFTs, which are literally the publicly available files.
                     </p>
                 </section>
 
@@ -101,45 +102,20 @@ const About = () => {
                             Don't worry it's not an easy concept to fully grasp, luckily there are more resources out there that'll help elaborate what exactly is an NFT.
                             <br></br>
                             <a href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq">NFTs, explained</a>
-                            
+                            <br></br>
+                            <a href="https://www.creativebloq.com/features/what-are-nfts">What-Are-NFTs</a>
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
-
-                    <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                            Click me!
-                        </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="4">
-                        <Card.Body>Hello! I'm another body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-
-                    <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="5">
-                            Click me!
-                        </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="5">
-                        <Card.Body>Hello! I'm another body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-
-                    <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="6">
-                            Click me!
-                        </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="6">
-                        <Card.Body>Hello! I'm another body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-
                 </Accordion>
+
+                <section>
+                    <h2>Meet The Team!</h2>
+                    <p>
+                        We hope you like our website, if you'd like to see the people who put this all together click <Link as={Link} to='/about/team'>Here!</Link>
+                    </p>
+                </section>
+
             </Container>
         </React.Fragment>
     );
