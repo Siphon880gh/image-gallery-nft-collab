@@ -13,18 +13,18 @@ const About = () => {
                 />
 
                 <section>
-                <h2>What's an NFT?</h2>
-                    <p>
-                        Before we dive into explaining what a NoFT is, we would first like to explain a brief summary of what an NFT is first.
-                        Before we dive into what a NoFT is and about, we would first like to explain what an NFT is.
-                    </p>
+                    <h2>What's an NFT?</h2>
+                        <p>
+                            Before we dive into explaining what a NoFT is, we would first like to explain a brief summary of what an NFT is first.
+                            Before we dive into what a NoFT is and about, we would first like to explain what an NFT is.
+                        </p>
 
-                    <p>
-                        NFTs stand for Non-Fungible-Tokens, these are best described as unique digital assets that are stored as Etherum Blockchain. This means that every NFT is unique, thus making them non-fungible. NFT assets can range from images, gifs, audio files, video-game items, and a multitude of other forms of digital creativity. There's a caveat to this, as there is likely no tangible difference between an original NFT digital asset versus a copy of that NFT.
-                    </p>
-                    <p>
-                        This being noted, some people might think that NFTs are completely worthless and people are entitled to that belief. But we aren't here to discuss the vast nuanced potential of NFTs, we're here on this site to share free stuff.
-                    </p>
+                        <p>
+                            NFTs stand for Non-Fungible-Tokens, these are best described as unique digital assets that are stored as Etherum Blockchain. This means that every NFT is unique, thus making them non-fungible. NFT assets can range from images, gifs, audio files, video-game items, and a multitude of other forms of digital creativity. There's a caveat to this, as there is likely no tangible difference between an original NFT digital asset versus a copy of that NFT.
+                        </p>
+                        <p>
+                            This being noted, some people might think that NFTs are completely worthless and people are entitled to that belief. But we aren't here to discuss the vast nuanced potential of NFTs, we're here on this site to share free stuff.
+                        </p>
                 </section>
 
                 <section>
@@ -101,9 +101,9 @@ const About = () => {
                         <Card.Body>
                             Don't worry it's not an easy concept to fully grasp, luckily there are more resources out there that'll help elaborate what exactly is an NFT.
                             <br></br>
-                            <a href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq">NFTs, explained</a>
+                            <a href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq" target="_blank" rel="noopener noreferrer">NFTs, explained</a>
                             <br></br>
-                            <a href="https://www.creativebloq.com/features/what-are-nfts">What-Are-NFTs</a>
+                            <a href="https://www.creativebloq.com/features/what-are-nfts" target="_blank" rel="noopener noreferrer">What-Are-NFTs</a>
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
