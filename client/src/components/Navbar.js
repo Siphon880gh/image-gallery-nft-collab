@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab, Form, FormControl, Button } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
+
+// import vector icons
 import SearchButton from '../assets/searchIconBox.png';
 import AddPostIcon from '../assets/addIcon.png';
 import FaveBoxIcon from '../assets/heartBoxIcon.png'
 import NoftLogo from '../assets/noftFULL2.png';
+import ProfileLogo from '../assets/profileBoxLogo.png';
+import LogoutBox from '../assets/logoutBox.png';
+import LoginBox from '../assets/loginBox.png';
+import SignupLoginBox from '../assets/signupLoginBox.png';
+
+//import auth 
 import Auth from '../utils/auth';
 
 
@@ -64,11 +72,29 @@ const AppNavbar = () => {
                       alt="Favorite NoFTs Icon"
                     />
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/profile/me'>Profile</Nav.Link>
-                  <Nav.Link onClick={() => setShowLogoutModal(true)}>Logout</Nav.Link>
+                  <Nav.Link as={Link} to='/profile/me'><img
+                    src={ProfileLogo}
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top"
+                    alt="Noft Custom Logo"
+                  /></Nav.Link>
+                  <Nav.Link onClick={() => setShowLogoutModal(true)}><img
+                    src={LogoutBox}
+                    width="90"
+                    height="45"
+                    className="d-inline-block align-top"
+                    alt="Logout Logo"
+                  /></Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}><img
+                  src={SignupLoginBox}
+                  width="160"
+                  height="50"
+                  className="d-inline-block align-top"
+                  alt="Signup or Login Logo"
+                /></Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

@@ -3,7 +3,7 @@ import { Card, Button, CardColumns, Container } from 'react-bootstrap';
 import { GET_STREAM } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 import LikeIcon from '../assets/likeArrowBoxIcon.png';
-import CommentIcon from '../assets/commentIconBox.png';
+import CommentIcon from '../assets/roundCommentBoxIcon.png';
 
 export function Home() {
   const { loading, data } = useQuery(GET_STREAM);
