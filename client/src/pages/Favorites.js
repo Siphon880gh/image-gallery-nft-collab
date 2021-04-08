@@ -39,7 +39,6 @@ const Favorites = () => {
                                     height="25"
                                     alt="Noft Custom Icon" />{favorites.commentCount}</Card.Text>
                             <Card.Text>NoFT Author: <Card.Link href={`/profile/${favorites.author}`}>{favorites.author}</Card.Link> </Card.Text>
-                            <Button variant="primary">Download</Button>
                         </Card.Body>
                     </Card>
                 );
