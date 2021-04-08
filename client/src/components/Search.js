@@ -31,9 +31,7 @@ const Search = ({searchFilter}) => {
   };
   return (
     <>
-      {loading ? (
-        <h1> Loading...</h1>
-      ) : (
+      {!loading && (
         <Results users={users}/>
       )}
     </>
