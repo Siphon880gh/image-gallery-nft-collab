@@ -11,15 +11,7 @@ const Search = ({searchFilter}) => {
     variables: {username: searchFilter.searchFilter}
   });
   const users = data?.usersByFilter || [];
-  // const Bar = (props) => {
-  //   return (
-  //     <div>
-  //       Search
-  //       {/* <button>OK</button> */}
-  //     </div>
-  //   );
-  // };
-
+  
   const Results = ({users}) => {
     return (
       <>
