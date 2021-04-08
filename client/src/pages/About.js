@@ -63,29 +63,46 @@ const About = () => {
                         </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="1">
-                        <Card.Body>Hello! I'm another body</Card.Body>
+                        <Card.Body>
+                            We respect the bluntness of your question. Let’s go over some reasons: 
+                            <br></br>
+                            1. NoFTs offer consumers the opportunity to enjoy near-identical mimicries of these digital works without a financial 
+                            <br></br>
+                            2. NoFT allows users to upload and download these files directly, no dev-tools needed
+                            <br></br>
+                            3. NoFT provides a platform for content creators and collectors to see what’s relevant in a free-distribution setting
+                            <br></br>
+                            4. Linking these NoFT posts to the market listings of their actual NFT originator can generate relevancy for artists and distributors
+                            <br></br>
+                            5.  It's fun to look at cool stuff people have made!
+                        </Card.Body>
                         </Accordion.Collapse>
                     </Card>
 
                     <Card>
                         <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                            Click me!
+                            So What Inspired NoFT?
                         </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="2">
-                        <Card.Body>Hello! I'm another body</Card.Body>
+                        <Card.Body>We wanted to create an environment for consumers to share some of their favorite NFT pieces with others who also appreciate the art. In this environment we wanted to develop a place where people can also favorite and like NoFTs to showcase what's currently popular. With the capability to add comments we want our users to provide feedback and talk about the NoFT! All of this in hopes to bring attention to existing NFTs and attention to the creators of these fantastical art pieces.</Card.Body>
                         </Accordion.Collapse>
                     </Card>
 
                     <Card>
                         <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                            Click me!
+                            I'm Still Confused About NFTs
                         </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="3">
-                        <Card.Body>Hello! I'm another body</Card.Body>
+                        <Card.Body>
+                            Don't worry it's not an easy concept to fully grasp, luckily there are more resources out there that'll help elaborate what exactly is an NFT.
+                            <br></br>
+                            <a href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq">NFTs, explained</a>
+                            
+                        </Card.Body>
                         </Accordion.Collapse>
                     </Card>
 
