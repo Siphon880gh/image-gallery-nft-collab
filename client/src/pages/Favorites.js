@@ -27,7 +27,7 @@ const Favorites = () => {
         </h2>
             {user.favorites.map((favorites, itrIndex) => {
                 return (
-                    <Card style={{ width: '18rem' }}>
+                    <Card key={favorites._id} style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title ><Card.Link href={`/post/${favorites._id}`}>{favorites.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={favorites.asset} />
