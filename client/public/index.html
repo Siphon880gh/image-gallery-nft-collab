@@ -26,17 +26,16 @@
     -->
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,400;1,300&display=swap"
     rel="stylesheet">
-  <script type="text/javascript">
-    (function () {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .register('./service-worker.js')
-          .then(() => console.log('Service Worker registered successfully.'))
-          .catch(error =>
-            console.log('Service Worker registration failed:', error)
-          );
-      }
-    })();
+
+  <!-- Register the service worker in the head of the HTML -->
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
   </script>
 
   <title>Reprint NFT</title>
