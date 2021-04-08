@@ -47,7 +47,8 @@ const MeetTheTeam = () => {
                     <Figure.Caption>
                         <p><a href="https://github.com/clhurlbut" target="_blank" rel="noopener noreferrer">Github</a></p>
                         <p><a href="https://www.linkedin.com/in/cassandra-hurlbut-7165081b6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                        <p></p>
+                        <p class="desc-team-member">Bachelors of Fine Arts in Cinema Screenwriting, certified Professional Association of Therapeutic Horsemanship Riding Instructor, certified Equine Assisted Growth And Learning Association Equine Specialist,</p>
+                        <p class="desc-team-member">and now certified creative coding developer! Master of merging imagination and fun with practical application</p>
                     </Figure.Caption>
                 </Figure>
 
@@ -62,7 +63,8 @@ const MeetTheTeam = () => {
                     <Figure.Caption>
                         <p><a href="https://github.com/jwilferd10" target="_blank" rel="noopener noreferrer">Github</a></p>
                         <p><a href="https://www.linkedin.com/in/jonathan-wilferd-3a6b461b6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                        <p></p>
+                        <p class="desc-team-member">Always striving to learn and understand how code works and continously striving to push myself out of my comfort zone to learn those new concepts. Took up a course at UCLA's Coding Bootcamp and am working</p>
+                        <p class="desc-team-member">to become a better developer! </p>
                     </Figure.Caption>
                 </Figure>
 
