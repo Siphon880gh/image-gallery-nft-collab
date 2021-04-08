@@ -10,6 +10,40 @@ import CommentIcon from '../assets/commentIconBox.png';
 import Auth from '../utils/auth';
 
 const Profile = props => {
+    async function openBloblUrl(e) {
+
+        let assetUrl = e.target.getAttribute("data-asset-url");
+        let downloadFilename = e.target.getAttribute("data-asset-filename");
+      
+        async function innerClosure() {
+            let response = await fetch(assetUrl);
+            let blob = await response.blob(); // download as Blob object
+            let blobUrl = await window.URL.createObjectURL(blob);
+            return blobUrl;
+        }
+      
+        let blobUrl = await innerClosure();
+      
+        var forcer = document.querySelector("#force-download");
+        forcer.innerHTML = "";
+        var a = document.createElement("a");
+        a.href=blobUrl;
+        a.setAttribute("download", downloadFilename);
+        forcer.appendChild(a);
+        a.click();
+      
+        return blobUrl;
+      
+      } // openBloblUrl
+    
+      function trimFilename(url) {
+        let dropRight = url.indexOf("?alt");
+        url = url.substr(0, dropRight);
+        let dropLeft = url.indexOf("/o/") + 3;
+        url = url.substr(dropLeft);
+        return url;
+      }
+
     const { username: userParam } = useParams();
 
     const { loading, data } = useQuery(userParam ? GET_USER : GET_ME, {
@@ -100,7 +134,7 @@ const Profile = props => {
                                     height="25"
                                     alt="Noft Custom Icon" />{userReprint.commentCount}</Card.Text>
                             <Card.Text>NoFT Author: <Card.Link href={`/profile/${userReprint.author}`}>{userReprint.author}</Card.Link> </Card.Text>
-                            <Button variant="primary">Download</Button>
+                              <Button onClick={openBloblUrl} data-asset-url={userReprint.asset} data-asset-filename={trimFilename(userReprint.asset)} variant="primary">Download</Button>
                         </Card.Body>
                     </Card>
                 );
