@@ -13,7 +13,6 @@ self.addEventListener("install", event => {
                 "/index.html",
                 "favicon.ico",
                 "nofttestlogo.png",
-                "/css/styles.css",
                 "/manifest.json",
                 "/service-worker.js"
                 // TODO: need to add more files here to cache 
