@@ -34,7 +34,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
     if (Auth.loggedIn())
       return (<img
         className="btn-like"
-        src={NotLikedIcon}
+        src={LikedIcon}
         width="70"
         height="34"
         alt="Noft Not-Liked Icon"
@@ -62,7 +62,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
     if (Auth.loggedIn())
       return (<img
         className="btn-like"
-        src={LikedIcon}
+        src={NotLikedIcon}
         width="70"
         height="34"
         alt="Noft Liked Icon"
@@ -88,7 +88,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
 
   return (
     <>
-      {liked ? <NotLikedIconJSX /> : <LikedIconJSX />} <span class="like-count">{likeCount}</span>
+      {liked ? <NotLikedIconJSX /> : <LikedIconJSX />} <span class="like-count">{likeCount} likes</span>
     </>
   );
 };
