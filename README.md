@@ -83,7 +83,16 @@ Coming Soon
 
 
 ## :e-mail: Meet The Team
-- ### [AidanGuarniere](https://github.com/AidanGuarniere)
-- ### [clhurlbut](https://github.com/clhurlbut)
-- ### [jwilferd10](https://github.com/jwilferd10)
-- ### [Siphon880gh](https://github.com/Siphon880gh)
+- ### Aidan Guarniere
+  - [Github](https://github.com/AidanGuarniere)
+  - [LinkedIn](https://www.linkedin.com/in/aidan-guarniere-56299719b/)
+- ### Cassandra Hurlbut
+  - [Github](https://github.com/clhurlbut)
+  - [LinkedIn](https://www.linkedin.com/in/cassandra-hurlbut-7165081b6/)
+- ### Jonathan Wilferd
+  - [Github](https://github.com/jwilferd10)
+  - [LinkedIn](https://www.linkedin.com/in/jonathan-wilferd-3a6b461b6/)
+- ### Weng Fei Fung
+  - [Github](https://github.com/Siphon880gh)
+  - [LinkedIn](https://www.linkedin.com/in/weng-fung)
+  - [YouTube](https://www.youtube.com/user/Siphon880yt/videos)
