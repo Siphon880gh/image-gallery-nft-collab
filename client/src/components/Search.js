@@ -8,7 +8,7 @@ const Search = ({searchFilter}) => {
   console.log(searchFilter)
   const { loading, data } = useQuery(GET_USERS_BY_FILTER, {
     //dumbest fix in the world -AG
-    variables: {username: searchFilter.searchFilter}
+    variables: {username: searchFilter?.searchFilter || "THIS_STRING_PURPOSELY_CANNOT_BE_FOUND"}
   });
   const users = data?.usersByFilter || [];
   
