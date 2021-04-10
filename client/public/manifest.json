@@ -3,19 +3,19 @@
   "short_name": "NoFT",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
-  "display": "browser",
+  "display": "standalone",
   "orientation": "landscape",
   "scope": "/",
   "start_url": "/",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon"
     },
     {
-      "src": "nofttestlogo.ico",
-      "sizes": "191x257",
+      "src": "nofttestlogo-144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ]
