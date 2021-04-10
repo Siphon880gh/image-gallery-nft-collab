@@ -1,4 +1,4 @@
-:sparkler: NoFT :sparkler:
+![image](noftFULL2.png)
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
@@ -18,9 +18,9 @@ That is where Reprint comes into play, with Reprint users can download and share
 <br>
 Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
 
-Additional Information About NoFT
+Challenges and Successes
 ---
-
+The creation process of NoFT has been an uphill battle, however when issues popped up we worked as a team to fix and tie everything together. Most of the challenge was getting NoFT's front-end to call the correct data, then correctly implement the new technologies and ensure they're working correctly. We spent countless amounts of hours together trying to figure out solutions to our problems and eventually overcame them. There were many aspects about this project when we thought it'd be easy to create, but each time it quickly turned into prolonged efforts to get a working implementation of what we wanted. For example one of our biggest struggles was getting our cloud storage and then being able to download what is uploaded. This has been successfully implemented!
 
 :computer: Demo
 ---
