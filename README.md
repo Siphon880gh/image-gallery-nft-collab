@@ -1,4 +1,4 @@
-:sparkler: Reprint :sparkler:
+:sparkler: NoFT :sparkler:
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
@@ -16,7 +16,11 @@ With the emergence of NFTs, there is a whole new digital-niche for us to explore
 That is where Reprint comes into play, with Reprint users can download and share Reprints of NFTs that are forever free. If you like a style, follow the artist to their actual NFT sales page. You can also browse trending reprints, create a collection of your personal favorites, and most importantly browse and appreciate what other artworks people enjoy!
 <br>
 <br>
-Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left: :point_left: :point_left:
+Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
+
+Additional Information About NoFT
+---
+
 
 :computer: Demo
 ---
@@ -32,8 +36,8 @@ Coming Soon
 - [Demo](#computer-demo)
 - [Screenshot](#camera-screenshot)
 - [Resources Used](#floppy_disk-resources-used)
-- [Installation](#minidisc-installation)
-- [Contact Information](#e-mail-contact-information)
+- [Installation and Usage](#minidisc-installation-and-usage)
+- [Meet The Team](#e-mail-meet-the-team)
 
 ## :floppy_disk: Resources Used
     Client Resources:
@@ -71,10 +75,14 @@ Coming Soon
       "graphql": "^15.5.0",
       "if-env": "^1.0.4"
 
-## :minidisc: Installation
-Install this project by clicking the *GREEN* button above, you can download it by ZIP or copy the SSH! When you load into VSCODE be sure to download the necessary node modules (npm run install). Then you'll want to type npm run seed so you can see initial users and digital assets. On the app you can sign up for your own account, you can create a post, follow, like a post, etcetera.
+## :minidisc: Installation and Usage
+1) Install this project by clicking the *GREEN* button above, you can download it by ZIP or copy the SSH. 
+2) Load into VSCODE and download the necessary node modules (npm run install). 
+3) Type npm run seed to set-up to generate users and other assets. 
+4) Create your own account, create a post, check out your favorites, follow a few people, like a post, and or leave a comment
 
-## :e-mail: Contact Information
+
+## :e-mail: Meet The Team
 - ### [AidanGuarniere](https://github.com/AidanGuarniere)
 - ### [clhurlbut](https://github.com/clhurlbut)
 - ### [jwilferd10](https://github.com/jwilferd10)
