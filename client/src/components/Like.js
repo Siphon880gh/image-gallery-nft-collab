@@ -88,7 +88,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
 
   return (
     <>
-      {liked ? <NotLikedIconJSX /> : <LikedIconJSX />} <span class="like-count">{likeCount} likes</span>
+      {liked ? <NotLikedIconJSX /> : <LikedIconJSX />} <span className="like-count">{likeCount} likes</span>
     </>
   );
 };
