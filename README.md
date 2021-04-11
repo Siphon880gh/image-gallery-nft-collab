@@ -2,7 +2,11 @@
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
-Description
+:computer: Live Deployment:
+---
+[Browse NoFT](https://reprint-media.herokuapp.com/)
+
+Description:
 ---
 In Alphabetical Order: by Aidan Guarniere, Cassandra Hurlbut, Jonathan Wilferd, and Weng Fei Fung
 <br>
@@ -18,19 +22,15 @@ That is where Reprint comes into play, with Reprint users can download and share
 <br>
 Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
 
-Challenges and Successes
+Challenges and Successes:
 ---
 The creation process of NoFT has been an uphill battle, however when issues popped up we worked as a team to fix and tie everything together. Most of the challenge was getting NoFT's front-end to call the correct data, then correctly implement the new technologies and ensure they're working correctly. We spent countless amounts of hours together trying to figure out solutions to our problems and eventually overcame them. There were many aspects about this project when we thought it'd be easy to create, but each time it quickly turned into prolonged efforts to get a working implementation of what we wanted. For example one of our biggest struggles was getting our cloud storage and then being able to download what is uploaded. This has been successfully implemented!
 
-:computer: Demo
----
-[Browse Reprint](https://reprint-media.herokuapp.com/)
-
-:camera: Screenshot
+:camera: Screenshot:
 ---
 Coming Soon
 
-:open_file_folder: Table of Contents
+:open_file_folder: Table of Contents:
 ---
 - [Description](#description)
 - [Demo](#computer-demo)
@@ -39,7 +39,7 @@ Coming Soon
 - [Installation and Usage](#minidisc-installation-and-usage)
 - [Meet The Team](#e-mail-meet-the-team)
 
-## :floppy_disk: Resources Used
+## :floppy_disk: Resources Used:
     Client Resources:
       "@apollo/react-hooks": "^3.1.5",
       "@google-cloud/firestore": "^4.9.8",
@@ -75,14 +75,14 @@ Coming Soon
       "graphql": "^15.5.0",
       "if-env": "^1.0.4"
 
-## :minidisc: Installation and Usage
+## :minidisc: Installation and Usage:
 1) Install this project by clicking the *GREEN* button above, you can download it by ZIP or copy the SSH. 
 2) Load into VSCODE and download the necessary node modules (npm run install). 
 3) Type npm run seed to set-up to generate users and other assets. 
 4) Create your own account, create a post, check out your favorites, follow a few people, like a post, and or leave a comment
 
 
-## :e-mail: Meet The Team
+## :e-mail: Meet The Team:
 - ### Aidan Guarniere
   - [Github](https://github.com/AidanGuarniere)
   - [LinkedIn](https://www.linkedin.com/in/aidan-guarniere-56299719b/)
