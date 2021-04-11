@@ -16,17 +16,23 @@ const MeetTheTeam = () => {
 
             <section>
                 <h2>About the NoFTeam</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                    Each member of the NoFTeam are students from UCLA Extensions Coding Bootcamp. NoFT was our third and final project for the cohort, we devoted a lot of time to this project and gave NoFT our maximum effort. 
+                    We went all out for this project as we wanted to showcase our understanding of the material taught to us, but went the extra mile to implement new technologies available to us to highlight this groups adaptiveness.  
+                </p>
+
+                <p>
+                    We truly hope you enjoy the NoFT experience, included below is our contact information. Reach out if you have any inquiries or just want to link up!
+                </p>
             </section>
 
             <section style={{textAlign:"center"}}>
                 <h3>Aidan Guarniere</h3>
                 <Figure>
                     <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
+                        width={300}
+                        height={300}
+                        alt="Image of Aidan"
                         src={Aidan}
                     />
                     <Figure.Caption>
@@ -39,9 +45,9 @@ const MeetTheTeam = () => {
                 <h3>Cassandra Hurlbut</h3>
                 <Figure>
                     <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
+                        width={300}
+                        height={300}
+                        alt="Image of Cassandra"
                         src={Cassandra}
                     />
                     <Figure.Caption>
@@ -55,9 +61,9 @@ const MeetTheTeam = () => {
                 <h3>Jonathan Wilferd</h3>
                 <Figure>
                     <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
+                        width={300}
+                        height={300}
+                        alt="Image of Jonathan"
                         src={Jonathan}
                     />
                     <Figure.Caption>
@@ -71,9 +77,9 @@ const MeetTheTeam = () => {
                 <h3>Weng Fei Fung</h3>
                 <Figure>
                     <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
+                        width={300}
+                        height={300}
+                        alt="Image of Weng"
                         src={Weng}
                     />
                     <Figure.Caption>
