@@ -6,7 +6,7 @@
 ---
 - [Description](#description)
 - [User Story](#user-story)
-- [Screenshot](#camera-screenshot)
+- [Preview](#camera-preview)
 - [Resources Used](#floppy_disk-resources-used)
 - [Installation and Usage](#minidisc-installation-and-usage)
 - [Meet The Team](#e-mail-meet-the-team)
@@ -15,9 +15,9 @@
 ---
 [Browse NoFT](https://reprint-media.herokuapp.com/)
 
-:camera: Screenshot:
+:camera: Preview:
 ---
-Coming Soon
+![image](docs/demo.gif)
 
 Description:
 ---
