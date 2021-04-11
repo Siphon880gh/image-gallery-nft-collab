@@ -55,3 +55,8 @@ footer a {
 footer a:hover {
     color: darkgray;
 }
+
+footer a:hover {
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+}

@@ -6,6 +6,21 @@
     max-height: 38px !important;
     height: 38px !important;
 }
+#navbar-main .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+#navbar-main a.nav-link {
+    display: inline-block;
+}
+#navbar-main a.nav-link img {
+    float: right;
+    margin: 20px;
+}
+#navbar-main a.nav-link img:hover {
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+}
 
 /* Mobile responsive navbar search */
 .site-navbar .form-inline {
