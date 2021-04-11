@@ -2,42 +2,55 @@
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
+:open_file_folder: Table of Contents:
+---
+- [Description](#description)
+- [User Story](#user-story)
+- [Screenshot](#camera-screenshot)
+- [Resources Used](#floppy_disk-resources-used)
+- [Installation and Usage](#minidisc-installation-and-usage)
+- [Meet The Team](#e-mail-meet-the-team)
+
 :computer: Live Deployment:
 ---
 [Browse NoFT](https://reprint-media.herokuapp.com/)
-
-Description:
----
-In Alphabetical Order: by Aidan Guarniere, Cassandra Hurlbut, Jonathan Wilferd, and Weng Fei Fung
-<br>
-<br>
-A non-fungible token (NFT) can be a digital file such as pictures, animations, audio, or video but they are not interchangeable because they are made unique by blockchain technology. Because they are unique exclusive items, they can be purchased and passed from one user to another. 
-<br>
-<br>
-With the emergence of NFTs, there is a whole new digital-niche for us to explore. One that takes into account creativity, supply and demand, blockchain, and much more. So how would one capitalize on it? Think of Nifty, a new marketplace for NFT’s. They’re killing it! Why don’t we do that? Probably because we’re not backed by a large software company with staff and money and better fin-tech than us. What can we do instead? An NFT Reprint Library! Where users can download Reprints of NFTs and share them with one another!
-<br>
-<br>
-That is where Reprint comes into play, with Reprint users can download and share Reprints of NFTs that are forever free. If you like a style, follow the artist to their actual NFT sales page. You can also browse trending reprints, create a collection of your personal favorites, and most importantly browse and appreciate what other artworks people enjoy!
-<br>
-<br>
-Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
-
-Challenges and Successes:
----
-The creation process of NoFT has been an uphill battle, however when issues popped up we worked as a team to fix and tie everything together. Most of the challenge was getting NoFT's front-end to call the correct data, then correctly implement the new technologies and ensure they're working correctly. We spent countless amounts of hours together trying to figure out solutions to our problems and eventually overcame them. There were many aspects about this project when we thought it'd be easy to create, but each time it quickly turned into prolonged efforts to get a working implementation of what we wanted. For example one of our biggest struggles was getting our cloud storage and then being able to download what is uploaded. This has been successfully implemented!
 
 :camera: Screenshot:
 ---
 Coming Soon
 
-:open_file_folder: Table of Contents:
+Description:
 ---
-- [Description](#description)
-- [Demo](#computer-demo)
-- [Screenshot](#camera-screenshot)
-- [Resources Used](#floppy_disk-resources-used)
-- [Installation and Usage](#minidisc-installation-and-usage)
-- [Meet The Team](#e-mail-meet-the-team)
+A non-fungible token (NFT) can be a digital file such as pictures, animations, audio, or video but they are not interchangeable because they are made unique by blockchain technology. Because they are unique exclusive items, they can be purchased and passed from one user to another. 
+<br>
+<br>
+A NoFT post retains whatever file structure the asset is posted in and are NOT connected to an Ethereum blockchain asset. When you post a jpeg of an NFT you created/found/bought, you are posting an actual jpeg file, NOT a non-fungible token. When someone downloads this post, they are downloading the jpeg file, not a non-fungible token. At no point is the user directly interacting with an NFT when they are on our website. All of the assets you see on this website are NoFTs, which are the publicly available, non-unique files. Curious on the difference between an NFT and a NoFT? Let's explain the difference:
+
+**NFT**
+- Unique asset
+- Ethereum blockchain
+- Chain of Title tracks ownership history
+
+<br>
+
+**NoFT**
+- NOT unique
+- NOT blockchain
+- NO Chain of Title available of NoFT
+
+<br>
+Basically, NoFT is an environment where users can share, favorite, download, and discuss all of their favorite NFT works without actually interacting with any real non-fungible tokens. No changes to the chain-of-title, no interaction with cryptocurrency wallets, no financial transactions of any kind.
+<br>
+<br>
+
+Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
+
+User Story:
+---
+**AS AN NFT USER:**
+- I want a platform to browse NFT content
+- So I can easily appreciate digital content
+- Without actually interacting with NFTs
 
 ## :floppy_disk: Resources Used:
     Client Resources:
