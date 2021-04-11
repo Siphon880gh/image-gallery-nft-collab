@@ -1,4 +1,4 @@
-![image](noftFULL2.png)
+![image](docs/noftFULL2.png)
 ====
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/reprint/master)
 
