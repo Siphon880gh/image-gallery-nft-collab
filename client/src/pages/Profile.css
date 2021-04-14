@@ -18,3 +18,9 @@
 .link:hover {
     text-decoration: underline;
 }
+
+#followers-modal .modal-header,
+#followed-modal .modal-header {
+    border: 0;
+    padding-bottom: 0;
+}
