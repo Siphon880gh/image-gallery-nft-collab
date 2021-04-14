@@ -11,7 +11,7 @@ export function Home() {
 
   return (<React.Fragment>
     {loading ? (
-      <div>Loading...</div>
+      <div>Loading... If on free server Heroku, this may take a while if the page hasn't been loaded in a while. Thank you.</div>
       // TODO: We can add a spinner here
     ) : (
       <Container>
