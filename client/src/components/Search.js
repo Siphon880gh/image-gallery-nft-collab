@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import { GET_USERS_BY_FILTER } from "../utils/queries";
 import { useQuery } from "@apollo/react-hooks";
-import { Card } from "react-bootstrap";
 import "./Search.css";
 const Search = ({searchFilter}) => {
   // console.log(searchFilter)
