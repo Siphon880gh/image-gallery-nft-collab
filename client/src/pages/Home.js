@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, CardColumns, Container } from 'react-bootstrap';
+import { CardColumns, Container } from 'react-bootstrap';
 import { GET_STREAM } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 import LikeIcon from '../assets/likeArrowBoxIcon.png';
