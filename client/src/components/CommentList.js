@@ -5,7 +5,7 @@ import { CardGroup } from 'react-bootstrap';
 
 const CommentCount = ({count}) => {
     count = parseInt(count);
-    if(count==1) {
+    if(count===1) {
         return <span className="commentCount">({count} comment)</span>
     } else if(count>1) {
         return <span className="commentCount">({count} comments)</span>
