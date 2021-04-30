@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_COMMENT } from '../utils/mutations';
-import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
