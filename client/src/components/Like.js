@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { LIKE, UNLIKE } from "../utils/mutations";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/react-hooks";
 import LikedIcon from "../assets/likeThumbsOrange.png";
 import NotLikedIcon from "../assets/likeThumbsNone.png";
 import Auth from "../utils/auth";
