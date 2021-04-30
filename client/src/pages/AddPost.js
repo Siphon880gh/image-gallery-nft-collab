@@ -10,7 +10,6 @@ import "firebase/firestore";
 import 'firebase/storage'
 // Generate random hash for filenames
 import generateHash from 'random-hash';
-import process from "process";
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
