@@ -6,3 +6,9 @@
 #root>div>div:nth-child(2) {
     padding: 0 15px !important;
 }
+
+.team-title-img {
+    height: auto;
+    width: 100vw;
+    padding: 0 10px;
+}

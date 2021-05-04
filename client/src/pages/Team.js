@@ -11,7 +11,7 @@ const MeetTheTeam = () => {
 
     return (
         <div>
-            <img src={MeetTeam}
+            <img className="team-title-img" src={MeetTeam}
                 alt="Custom NOFT title"
             />
 
