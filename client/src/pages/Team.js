@@ -5,6 +5,7 @@ import Aidan from '../assets/team/aidan.jpg';
 import Cassandra from '../assets/team/cassandra.jpg';
 import Jonathan from '../assets/team/jonathan.jpg';
 import Weng from '../assets/team/weng.jpg';
+import "./Team.css";
 
 const MeetTheTeam = () => {
 

@@ -1,0 +1,8 @@
+#root>div>div:nth-child(2)>img {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+#root>div>div:nth-child(2) {
+    padding: 0 15px !important;
+}

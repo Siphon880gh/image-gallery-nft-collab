@@ -3,7 +3,7 @@ import { Container, Card, Button } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import { Link } from 'react-router-dom';
 import AboutLogo from '../assets/aboutTitle.png';
-import '../pages/About.css';
+import './About.css';
 
 const About = () => {
 
