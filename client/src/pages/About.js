@@ -3,6 +3,8 @@ import { Container, Card, Button } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import { Link } from 'react-router-dom';
 import AboutLogo from '../assets/aboutTitle.png';
+import '../pages/About.css';
+
 const About = () => {
 
     return (
@@ -32,7 +34,7 @@ const About = () => {
                     <p>
                         Here on our site we provide no NFTs; zero, zilch, nada. Instead, we provide their digital dopplegangers.  We would like to repeat that for everyone:
                     </p>
-                    <h4>We do NOT provide NFTs</h4>
+                    <h2>We do NOT provide NFTs</h2>
                     <p>
                         NoFT allows users to share, favorite, download, and discuss all of their favorite NFT works without actually interacting with real Non-Fungible-Tokens. All of the assets you see on this website are NoFTs, which are literally the publicly available files.
                     </p>
@@ -108,13 +110,6 @@ const About = () => {
                         </Accordion.Collapse>
                     </Card>
                 </Accordion>
-
-                <section>
-                    <h2>Meet The Team!</h2>
-                    <p>
-                        We hope you like our website, if you'd like to see the people who put this all together click <Link as={Link} to='/about/team'>Here!</Link>
-                    </p>
-                </section>
 
             </Container>
         </React.Fragment>
