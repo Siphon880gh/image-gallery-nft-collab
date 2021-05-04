@@ -31,8 +31,6 @@ const MeetTheTeam = () => {
                 <h3>Aidan Guarniere</h3>
                 <Figure>
                     <Figure.Image
-                        width={300}
-                        height={300}
                         alt="Image of Aidan"
                         src={Aidan}
                     />
