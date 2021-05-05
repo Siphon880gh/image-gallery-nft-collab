@@ -74,7 +74,7 @@ const MeetTheTeam = () => {
     ]
 
     return (
-        <div>
+        <div className="page-team">
             <img className="team-title-img" src={MeetTeam}
                 alt="Custom NOFT title"
             />
@@ -82,7 +82,7 @@ const MeetTheTeam = () => {
             <section>
             {teamMembers.map((teamMember, itr)=>{
                 return (
-                    <React.Fragment key={itr}>
+                    <div className="teammember-section" key={itr}>
                         <h3>{teamMember.name}</h3>
                         <Figure>
                             <Figure.Image
@@ -93,7 +93,7 @@ const MeetTheTeam = () => {
                                 {teamMember.html()}
                             </Figure.Caption>
                         </Figure>
-                    </React.Fragment>
+                    </div>
                 )
             })}
             </section>

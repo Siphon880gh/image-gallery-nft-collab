@@ -3,10 +3,6 @@
     margin-bottom: 1.25rem;
 }
 
-#root>div>div:nth-child(2) {
-    padding: 0 15px !important;
-}
-
 .team-title-img {
     height: auto;
     width: 100%;
@@ -28,7 +24,7 @@
     height: 300px;
 }
 
-.figure:nth-of-type(even) {
+.teammember-section:nth-of-type(even) .figure {
     flex-direction: row-reverse;
 }
 
@@ -48,4 +44,18 @@
 
 .desc-team-member {
     padding: 0 5px;
+}
+
+.page-team {
+    padding: 0 15px;
+}
+
+.teammember-section {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1250px) {
+    .page-team {
+        padding: 0 20vw;
+    }
 }
