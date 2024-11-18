@@ -11,7 +11,7 @@ const db = require('./config/connection');
 
 // Server
 require('dotenv').config({ path: '../.env' });
-const PORT = process.env.PORT_GRAPHQL || 3001;
+const PORT_GRAPHQL = process.env.PORT_GRAPHQL || 3001;
 const app = express();
 
 // - Apollo server library

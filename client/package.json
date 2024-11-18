@@ -2,7 +2,8 @@
     "name": "client",
     "version": "0.1.0",
     "private": true,
-    "proxy": "http://localhost:3001",
+    "proxy": "http://127.0.0.1:3003",
+    "homepage": "/app/image-gallery-nft-collab",
     "dependencies": {
         "@apollo/react-hooks": "^3.1.5",
         "@google-cloud/firestore": "^4.9.8",
@@ -25,8 +26,8 @@
         "react-scripts": "3.4.1"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
+        "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+        "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },

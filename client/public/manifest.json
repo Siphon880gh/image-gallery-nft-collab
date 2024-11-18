@@ -5,8 +5,8 @@
   "background_color": "#2196f3",
   "display": "standalone",
   "orientation": "landscape",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/app/image-gallery-nft-collab/",
+  "start_url": "/app/image-gallery-nft-collab/",
   "icons": [
     {
       "src": "favicon.ico",

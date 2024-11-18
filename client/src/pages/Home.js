@@ -20,7 +20,8 @@ export function Home() {
         <h2>
           {streamnofts.length
             ? ``
-            : 'No trending NoFTs found. Is this a fresh install? Try seeding the database.'}
+            : <><br/>No trending NoFTs found. Is this a fresh install? Try seeding the database.</>
+            }
         </h2>
         <CardColumns>
           {streamnofts.map((reprint, itrIndex) => {
