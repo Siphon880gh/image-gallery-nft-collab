@@ -21,9 +21,13 @@
 
 Description:
 ---
+
+**About**
+Share your favorite NFTs and link them to the marketplace among other NFT enthusiasts.
+
+**Technicalities**
 A non-fungible token (NFT) can be a digital file such as pictures, animations, audio, or video but they are not interchangeable because they are made unique by blockchain technology. Because they are unique exclusive items, they can be purchased and passed from one user to another. 
-<br>
-<br>
+
 A NoFT post retains whatever file structure the asset is posted in and are NOT connected to an Ethereum blockchain asset. When you post a jpeg of an NFT you created/found/bought, you are posting an actual jpeg file, NOT a non-fungible token. When someone downloads this post, they are downloading the jpeg file, not a non-fungible token. At no point is the user directly interacting with an NFT when they are on our website. All of the assets you see on this website are NoFTs, which are the publicly available, non-unique files. Curious on the difference between an NFT and a NoFT? Let's explain the difference:
 
 **NFT**
@@ -31,17 +35,12 @@ A NoFT post retains whatever file structure the asset is posted in and are NOT c
 - Ethereum blockchain
 - Chain of Title tracks ownership history
 
-<br>
-
 **NoFT**
 - NOT unique
 - NOT blockchain
 - NO Chain of Title available of NoFT
 
-<br>
-Basically, NoFT is an environment where users can share, favorite, download, and discuss all of their favorite NFT works without actually interacting with any real non-fungible tokens. No changes to the chain-of-title, no interaction with cryptocurrency wallets, no financial transactions of any kind.
-<br>
-<br>
+Basically, NoFT is an environment where users can share, favorite, download, and discuss all of their favorite NFT works **without actually interacting with any real non-fungible tokens**. No changes to the chain-of-title, no interaction with cryptocurrency wallets, no financial transactions of any kind.
 
 Still on the ropes trying to figure out what Non-Fungible Tokens are? Don't worry, there are more resources out there to discover more. For further understanding check this link out from **The Verge** and their article, [NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq) :point_left:
 
