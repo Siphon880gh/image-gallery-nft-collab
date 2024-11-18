@@ -8,10 +8,6 @@ Ports: This CRA needs its own unique port so it won't conflict with your other C
 
 Base URL - Here's how you replace the baseURL for this app:
 - Run grep for `/app/image-gallery-nft-collab/` and replace with your new baseURL. Or you may use sed to match and replace.
-- Adjust proper base path for React Router's `<Router basename={..}>`. Namely, `client/.env`'s:
-```
-REACT_APP_REACT_ROUTER_BASEPATH=`/app/image-gallery-nft-collab`
-```
 - Run grep for `/app/image-gallery-nft-collab` and replace with your new baseURL. Or you may use sed to match and replace.
 
 Reverse Proxies:
@@ -77,32 +73,43 @@ Btw, that graphql port is really the express port because express is requesting/
 Review of why we reverse proxy: Aka proxy passing. You dont want someone to visit domain.tld:3001. Makes it harder to give a SSL, looks unprofessional, and gives hackers another port to target. You can hide it behind domain.tld/app/app1 or domain.tld/app1/api, for example
 
 Say the file structure for the most part is:
-./client which uses cra react and its own package.json
-./server which uses graphql, minimum express endpoints, and its own package.json
-package.json at the root folder
+- ./client which uses cra react and its own package.json
+- ./server which uses graphql, minimum express endpoints, and its own package.json
+- package.json at the root folder
 
 If you have multiple react apps and graphql apps, you have to manage the react development port and graphql port AND graphql url (assign a custom endpoint other than the default /graphql )
 
 Optional steps? Some of the steps, particularly modifying the cra react port are optional because that port is only for previewing the react app that hot reload when you edit your code. On actual production server, you’re only running server/server.js which serves the built version of the cra react app at /client/build/ which required you have to have npm run build  inside the client folder. In other words, at the production server, you’re actually only running the server/server.js port instead of simultaneously running the cra react development hot reload port as well.
 
-Optional: at cra client/, it by default assigns 3000 or a higher number, but you should pre-assign a  port at client/.env  with PORT=3002 , for example. This seems like a very generic convention using PORT as the variable but unfortunately CRA has chosen it. The .env file must be at the same level where the package.json for cra is at and the variable must be PORT , so that file could be at client/.env with the line PORT=3002 , for example.
+Optional: at cra client/, it by default assigns 3000 or a higher number, but you should pre-assign a port at client/.env with PORT=3002, for example. This seems like a very generic convention using PORT as the variable but unfortunately CRA has chosen it. The .env file must be at the same level where the package.json for cra is at and the variable must be PORT, so that file could be at client/.env with the line PORT=3002, for example.
 
-For graphql, you may need to assign a discretionary PORT at server/server.js . To streamline managing multiple graphql apps, you can assign a PORT_GRAPHQL  at the root .env  file (outside of server/ folder) while your server/server.js ‘s dotenv process can go up a folder into the root to look into the .env:
+For graphql, you may need to assign a discretionary PORT at server/server.js. To streamline managing multiple graphql apps, you can assign a PORT_GRAPHQL  at the root .env  file (outside of server/ folder) while your server/server.js ‘s dotenv process can go up a folder into the root to look into the .env:
+
+server/server.js:
+```
 require('dotenv').config({ path: '../.env' });
 
-//...
+const PORT = process.env.PORT_GRAPHQL || 3003;
+```
 
-const PORT = process.env.PORT_GRAPHQL || 3001;
+root .env (outside of server/ and client/):
+```
+PORT_GRAPHQL: 3003
+```
 
 Optional: And your cra frontend needs to proxy into that GraphQL server port, otherwise the browser will block by CORS. CRA reads package.json for proxy, so your client/package.json  could have "proxy": "http://localhost:3003". This is an optional step because in production server, you’re actually only running the server/server.js port instead of simultaneously running the cra react development hot reload port previewing as well, and the website files from `client/build` are being delivered from the same server port so no need for proxying.
 
 You need to be discriminating on the /graphql api endpoint at both the cra frontend AND at the server.js.. make sure they both match though:
+
 server/server.js:
+```
 // Set a custom GraphQL path for this server
 // server.applyMiddleware({ app });
 server.applyMiddleware({ app, path: '/graphql-image-gallery-nft-collab' });
+```
 
-client/src/App.js:
+client/src/App.js - Refer to uri:
+```
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('id_token');
@@ -116,17 +123,18 @@ const client = new ApolloClient({
   // uri: '/graphql'
   uri: '/graphql-image-gallery-nft-collab'
 });
-
+```
 
 The files needed and modified are:
-.env
+.env X
 clients/.env
 clients/package.json
-clients/src/App.js
-server/server.js
+clients/src/App.js X
+server/server.js X
 
 React Router?
 When you run on the server, the npm run script needs to only run the server/server.js. when served, that built may have problems if there’s react routes. This is the solution:
+```
 function App() {
   const basepath = process.env.REACT_APP_REACT_ROUTER_BASEPATH || '/';
 
@@ -140,7 +148,8 @@ function App() {
     </Router>
   );
 }
-So you have to modify client/.env. Make sure to rebuild the client/build 
+```
+So then you have to modify client/.env. Make sure to rebuild the client/build 
 ^ Note the env variable name must be preceded REACT_APP_ . In a Create React App (CRA) project automatically brings in .env variables without the need to manually import dotenv. However, only variables prefixed with REACT_APP_ are included in the React app's build process.
 
 If troubleshooting graphql, note you can open two SSH terminal sessions with same credentials. While one is running the server (unless it’s already running in the background), in any case, see if that port and that endpoint can be reached: 

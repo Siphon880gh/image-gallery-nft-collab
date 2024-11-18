@@ -10,7 +10,8 @@ const { authMiddleware, permanentlyRevoke } = require('./utils/auth');
 const db = require('./config/connection');
 
 // Server
-const PORT = process.env.PORT || 3001;
+require('dotenv').config({ path: '../.env' });
+const PORT = process.env.PORT_GRAPHQL || 3001;
 const app = express();
 
 // - Apollo server library
@@ -20,7 +21,9 @@ const server = new ApolloServer({
     context: authMiddleware
 });
 
-server.applyMiddleware({ app });
+// Set a custom GraphQL path for this server
+// server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/graphql-image-gallery-nft-collab' });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,8 +46,8 @@ app.get('*', (req, res) => {
 });
 
 db.once('open', () => {
-    app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    app.listen(PORT_GRAPHQL, () => {
+        console.log(`API server running on port ${PORT_GRAPHQL}!`);
+        console.log(`Use GraphQL at http://localhost:${PORT_GRAPHQL}${server.graphqlPath}`);
     });
 });

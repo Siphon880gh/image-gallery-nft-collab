@@ -31,7 +31,8 @@ const client = new ApolloClient({
       }
     });
   },
-  uri: '/graphql'
+  // uri: '/graphql'
+  uri: '/graphql-image-gallery-nft-collab'
 });
 
 function App() {
