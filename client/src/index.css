@@ -23,3 +23,8 @@ h6 {
 .clickable:hover {
   color: rgba(39, 44, 49, .5);
 }
+.center-block {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+}
