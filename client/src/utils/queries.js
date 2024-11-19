@@ -1,7 +1,6 @@
 import gql from 'graphql-tag';
 
-// TODO: Add more graphQL executions on the client UI side. 
-// Try the query/mutations at http://localhost:3001/graphql before adding them here.
+// To team members: Try the query/mutations at http://localhost:3001/graphql before adding them here.
 
 export const TRENDING_REPRINTS = gql`
 query {
