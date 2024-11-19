@@ -40,10 +40,101 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-/* export const ADD_REPRINT = gql``;
-export const DELETE_REPRINT = gql``;
-export const DELETE_COMMENT = gql``;
-export const FOLLOW = gql``;
-export const UNFOLLOW = gql``;
-export const LIKE = gql``;
-export const UNLIKE = gql``; */
+//export const DELETE_COMMENT = gql``;
+export const DELETE_COMMENT = gql`
+  mutation deleteComment($reprintId: ID! $commentId: ID!) {
+    deleteComment(reprintId: $reprintId, commentId: $commentId) {
+      comments {
+        _id
+        commentBody
+        author
+        createdAt
+      }
+    }
+  }
+`;
+
+//export const ADD_REPRINT = gql``;
+export const ADD_REPRINT = gql`
+  mutation addReprint($title: String!, $asset: String!, $caption: String, $marketListing: String!) {
+    addReprint(title: $title, asset: $asset, caption: $caption, marketListing: $marketListing ) {
+      _id
+      title
+      asset
+      author
+      caption
+      marketListing
+      createdAt
+      likes{
+        _id
+      }
+      likeCount
+      comments {
+        _id
+        commentBody
+        author
+        createdAt
+      }
+      commentCount
+    }
+  }
+`;
+
+//export const DELETE_REPRINT = gql``;
+export const DELETE_REPRINT = gql`
+  mutation deleteReprint($reprintId: ID!) {
+    deleteReprint(reprintId: $reprintId) {
+      title
+    }
+  }
+`;
+
+//export const FOLLOW = gql``;
+export const FOLLOW = gql`
+  mutation follow($followedId: ID!) {
+    follow(followedId: $followedId) {
+      username
+      followed {
+        _id
+      }
+    followerCount
+  }
+}
+`;
+
+//export const UNFOLLOW = gql``;
+export const UNFOLLOW = gql`
+  mutation unfollow($followedId: ID!) {
+    unfollow(followedId: $followedId) {
+      username
+      followed {
+        _id
+      }
+    followerCount
+  }
+}
+`;
+
+//export const LIKE = gql``;
+export const LIKE = gql`
+  mutation like($reprintId: ID!) {
+    like(reprintId: $reprintId) {
+      likeCount
+      likes {
+        _id
+      }
+    }
+  }
+`;
+
+//export const UNLIKE = gql``;
+export const UNLIKE = gql`
+  mutation unlike($reprintId: ID!) {
+    unlike(reprintId: $reprintId) {
+      likeCount
+      likes {
+        _id
+      }
+    }
+  }
+`;
