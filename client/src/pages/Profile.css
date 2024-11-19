@@ -1,0 +1,7 @@
+.profile .profile-stats {
+    border: 0;
+}
+.profile .your-reprints {
+    border: 1px solid darkgray;
+    padding: 1rem;
+}

@@ -24,7 +24,7 @@ const Favorites = () => {
     return (
         <Container>
             <h2>
-                Viewing Your Favorite Reprints.
+                Viewing Your Favorite Reprints
         </h2>
             {user.favorites.map((favorite, itrIndex) => {
                 return (

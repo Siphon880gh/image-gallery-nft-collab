@@ -1,0 +1,16 @@
+.post-header {
+    padding-bottom: 1.25rem;
+}
+.postcard .title {
+    font-size: 1.75rem;
+}
+.postcard .card-img-top {
+    border: 1px solid gray;
+    margin-bottom: 20px;
+}
+.likeUI {
+    margin-right: 20px;
+}
+.likeUI .count, .commentUI .count {
+    margin-left: 10px;
+}
