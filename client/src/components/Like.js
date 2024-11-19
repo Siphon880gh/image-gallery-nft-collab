@@ -7,9 +7,12 @@ import NotLikedIcon from "../assets/heartIconEmpty.png";
 import Auth from "../utils/auth";
 
 const Likes = function({singleReprint, otherAuth}) {
+
+  // Prepare like button if logged
   const likedByIds = singleReprint.likes.map(likeObject=>likeObject._id);
-  const myId = Auth.getProfile().data._id;
-  const isLikedByMe = likedByIds.includes(myId);
+  const profile = Auth.getProfile();
+  const myId = profile ? profile.data._id : null;
+  const isLikedByMe = myId ? likedByIds.includes(myId) : null;
 
   const [liked, setLiked] = useState(isLikedByMe);
   const [likeNoft] = useMutation(LIKE);
@@ -18,10 +21,12 @@ const Likes = function({singleReprint, otherAuth}) {
 
   // Debug
   console.log({reprintId})
-  console.log({isLikedByMe});
+  console.log({isLikedByMe, info: "Would be null if not logged in"});
 
   const NotLikedIconJSX = ()=> {
-    return (<button
+    
+    if(Auth.loggedIn())
+      return (<button
             src={NotLikedIcon}
             width="25"
             height="25"
@@ -40,37 +45,40 @@ const Likes = function({singleReprint, otherAuth}) {
               setLiked(false);
             }}
           >Unlike</button>
-   );
+   )
+   else
+     return (<></>);
   }
   
   const LikedIconJSX = ()=> {
-    return (<button
-          src={LikedIcon}
-          width="25"
-          height="25"
-          alt="Noft Liked Icon"
-          onClick={() => {
-              try {
-                likeNoft({ 
-                  variables: {
-                    reprintId 
-                  }
-                  });
-              } catch(e) {
-                console.error(e);
-              }
-                
-            setLiked(true);
-          }}
-        >Like</button>
-    );
+    if(Auth.loggedIn())
+      return (<button
+            src={LikedIcon}
+            width="25"
+            height="25"
+            alt="Noft Liked Icon"
+            onClick={() => {
+                try {
+                  likeNoft({ 
+                    variables: {
+                      reprintId 
+                    }
+                    });
+                } catch(e) {
+                  console.error(e);
+                }
+                  
+              setLiked(true);
+            }}
+          >Like</button>
+      )
+    else
+      return (<></>);
   }
 
   return (
       <>
-        {
-          liked?<NotLikedIconJSX/>:<LikedIconJSX/>
-        }
+      {liked?<NotLikedIconJSX/>:<LikedIconJSX/>}
 
       {Boolean(singleReprint.likeCount.length) ? (
         <span>
