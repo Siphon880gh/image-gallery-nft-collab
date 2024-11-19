@@ -57,7 +57,8 @@ const Profile = props => {
             <p>Followed: {user.followedCount}</p>
             <p>Total Reprints: {user.reprintCount}</p>
             <p>Total Favorite Counts: {user.favoriteCount}</p>
-            <a href={`/favorites/${user.username}`}>See My Favorites</a>
+            <a href={`/favorites/${user.username}`}>My Favorites</a>
+            <h2>{user.username}'s Reprints:</h2>
 
             {user.reprints.map((userReprint, itrIndex) => {
                 return (

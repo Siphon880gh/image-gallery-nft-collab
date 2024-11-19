@@ -126,8 +126,20 @@ query reprint($id: ID!){
     title
     asset
     author
+    caption
+    marketListing
     likeCount
+    likes{
+      _id
+    username
+    }
     commentCount
+    comments{
+      _id
+    commentBody
+    author
+    createdAt
+    }
   }
 }`;
 

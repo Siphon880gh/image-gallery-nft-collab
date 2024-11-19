@@ -5,31 +5,42 @@ import Image from 'react-bootstrap/Image'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useParams } from 'react-router-dom';
+import { GET_SINGLE_CARD } from '../utils/queries';
+import { useQuery } from '@apollo/react-hooks';
+
 
 // Create a const for postForm that'll return JSX
-const postInfo = () => {
+export function PostInfo() {
+    let { title } = useParams();
+    const { loading, data } = useQuery(GET_SINGLE_CARD, {
+        variables: { title }
+    });
+    const singleReprint = data?.reprint || {};
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     // Return JSX
     return (
         <div>
             <section>
-                {/* Reprint Title Here */}
-                <h1>Reprint Title Example</h1>
+                <h1>{singleReprint.title}</h1>
             </section>
-            
-            <Image src="holder.js/100px250" fluid />
-            
+
+            <Image src={singleReprint.asset} fluid />
+
             <Card>
-                <Card.Body>Caption:</Card.Body>
+                <Card.Body>{singleReprint.caption}</Card.Body>
             </Card>
-           
+
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
-                    <Card.Title>Author:</Card.Title>
-                    <Card.Title>Market Listing:</Card.Title>
-                    <Card.Title>Caption:</Card.Title>
-                    <Card.Title>Likes:</Card.Title>
-                    <Card.Title>Favorited This Many Times:</Card.Title>
+                    <Card.Title><Card.Link href={`/profile/${singleReprint.author}`}>{singleReprint.author}</Card.Link></Card.Title>
+                    <Card.Title><Card.Link href={`${singleReprint.marketListing}`}>{singleReprint.marketListing}</Card.Link></Card.Title>
+                    <Card.Title>{singleReprint.caption}</Card.Title>
+                    <Card.Title><span role="img" aria-label="like emoji">👍</span>{singleReprint.likeCount}</Card.Title>
                 </Card.Body>
             </Card>
 
@@ -37,12 +48,12 @@ const postInfo = () => {
                 <Card.Header> <h3> Comment Section: </h3> </Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
-                    <p>
-                        {' '}
+                        <p>
+                            {' '}
                             Comment Text: {' '}
-                    </p>
-                    <footer className="blockquote-footer">
-                        Different User:
+                        </p>
+                        <footer className="blockquote-footer">
+                            Different User:
                     </footer>
                     </blockquote>
                 </Card.Body>
@@ -57,8 +68,8 @@ const postInfo = () => {
                 </Button>
             </Form.Group>
         </div>
-    )
-}
+    );
+};
 // Export addPost
-export default postInfo;
+export default PostInfo;
 
