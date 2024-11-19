@@ -62,7 +62,7 @@ Eg.
 
 Start script at remote server:
 - Make sure you built from client/ already
-- From the app root folder: `npm run start:prod` which serves only the `server/server.js` which serves `client/build` files
+- From the app root folder: `npm run start:prod` which runs only the `server/server.js` which serves `client/build` files
 
 ---
 
