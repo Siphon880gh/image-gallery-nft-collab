@@ -139,4 +139,26 @@ export const UNLIKE = gql`
   }
 `;
 
+export const FAVORITE = gql`
+mutation favorite($reprintId: ID!) {
+  favorite(reprintId: $reprintId) {
+    username
+    favoriteCount
+    favorites{
+        _id
+    }
+  }
+}
+`;
 
+export const UNFAVORITE = gql`
+mutation unfavorite($reprintId: ID!) {
+  unfavorite(reprintId: $reprintId) {
+    username
+    favoriteCount
+    favorites{
+        _id
+    }
+  }
+}
+`;

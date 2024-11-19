@@ -25,7 +25,7 @@ export function Home() {
             return (
               <Card key={reprint._id} style={{ width: '18rem' }}>
                 <Card.Body>
-                  <Card.Title ><Card.Link href={`/post/${reprint.title}`}>{reprint.title}</Card.Link></Card.Title>
+                  <Card.Title ><Card.Link href={`/post/${reprint._id}`}>{reprint.title}</Card.Link></Card.Title>
                   <Card.Img variant="top" src={reprint.asset} />
                   <Card.Text><img src={LikeIcon}
                     width="25"

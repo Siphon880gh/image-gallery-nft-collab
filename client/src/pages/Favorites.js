@@ -21,24 +21,6 @@ const Favorites = props => {
             return <div>Loading...</div>;
         }
 
-    /*    if (!user?.username) {
-           return (
-               <h4>
-                   You need to be logged in to see this. Use the navigation links above to sign up or log in!
-               </h4>
-           );
-       } */
-
-    /* const handleClick = async () => {
-        try {
-            await addFriend({
-                variables: { id: user._id }
-            });
-        } catch (e) {
-            console.error(e);
-        }
-    }; */
-
     return (
         <Container>
             {console.log(user)}
@@ -49,12 +31,11 @@ const Favorites = props => {
                 Viewing Your Favorite Reprints.
         </h2>
 
-
             {favorited.map((userReprint, itrIndex) => {
                 return (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
-                            <Card.Title ><Card.Link href={`/post/${userReprint.title}`}>{userReprint.title}</Card.Link></Card.Title>
+                            <Card.Title ><Card.Link href={`/post/${userReprint._id}`}>{userReprint.title}</Card.Link></Card.Title>
                             <Card.Img variant="top" src={userReprint.asset} />
                             <Card.Text><img src={HeartIcon}
                                 width="25"
