@@ -5,13 +5,15 @@ import { useQuery } from '@apollo/react-hooks';
 import LikeIcon from '../assets/likeArrowBoxIcon.png';
 import CommentIcon from '../assets/drawnCommentIcon.png';
 
+import LoadingSpindle from "../assets/spinner-1.3s-200px.png";
+
 export function Home() {
   const { loading, data } = useQuery(GET_STREAM);
   const streamnofts = data?.stream || [];
 
   return (<React.Fragment>
     {loading ? (
-      <div>Loading... If on free server Heroku, this may take a while if the page hasn't been loaded in a while. Thank you.</div>
+      <div><img src={LoadingSpindle}></img>If on free server Heroku, this may take a while if the page hasn't been loaded in a while. Thank you.</div>
       // TODO: We can add a spinner here
     ) : (
       <Container>

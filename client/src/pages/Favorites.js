@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import PostCard from "../components/PostCard";
+import LoadingSpindle from "../assets/spinner-1.3s-200px.png";
 
 const Favorites = () => {
 
@@ -16,7 +17,7 @@ const Favorites = () => {
         Auth.loggedIn()
     )
         if (loading) {
-            return <div>Loading...</div>;
+            return <div><img src={LoadingSpindle}></img></div>;
         }
 
     return (
