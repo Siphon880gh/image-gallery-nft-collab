@@ -5,3 +5,7 @@
     border: 1px solid darkgray;
     padding: 1rem;
 }
+
+.follow-btn {
+    width: 185px !important;
+}
