@@ -1,6 +1,5 @@
 
 .footer {
-    width: 100vw;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0;
@@ -15,7 +14,6 @@
     margin-bottom: 1rem;
     overflow: scroll;
     height: 2.5rem;
-    width: 100vw;
     overflow-y: hidden;
     white-space: nowrap;
     text-align: center;

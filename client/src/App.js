@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Components
 import Navbar from './components/Navbar';
 import Footer, { FooterPushDown } from './components/Footer';
+import {Container} from 'react-bootstrap';
 
 // Pages
 import Home from './pages/Home';
@@ -37,7 +38,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <>
+        <Container className="p-0" fluid>
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
@@ -53,7 +54,7 @@ function App() {
           </Switch>
           <FooterPushDown />
           <Footer />
-        </>
+        </Container>
       </Router>
     </ApolloProvider>
   );
