@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Form, FormControl, Button, CardDeck } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
+import NoftLogo from '../assets/noftFULL2.png';
 import Auth from '../utils/auth';
+
 
 const AppNavbar = () => {
   // set modal display state
@@ -15,7 +17,13 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            NoFT
+            <img
+              src={NoftLogo}
+              width="65"
+              height="30"
+              className="d-inline-block align-top"
+              alt="Noft Custom Logo"
+            />
           </Navbar.Brand>
           <Form inline>
             <FormControl type="text" placeholder="Search NoFT..." className="mr-sm-2" />
