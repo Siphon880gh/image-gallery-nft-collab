@@ -41,6 +41,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     author(username: String!): User
+    usersByFilter(username: String!): [User]
     userById(_id: ID!): User
     stream: [Reprint]
     reprint(_id: ID!): Reprint

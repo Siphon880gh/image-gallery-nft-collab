@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useParams } from "react-router-dom";
-import {GET_USER} from "../utils/queries"
+import {GET_USER_BY_FILTER} from "../utils/queries"
 import { useLazyQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import Link from './Link';
 
 const Search = () => {
   const [searchFilter, setSearchFilter] = useState('');
-  const [getUser, { error }] = useMutation(GET_USER);
+  const [getUser, { error }] = useMutation(GET_USER_BY_FILTER);
 
   return (
     <>
