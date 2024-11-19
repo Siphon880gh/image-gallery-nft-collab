@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Auth from "../utils/auth";
 
 // Assets
-import UnfavoriteIcon from "../assets/faveHeartTextBox.png"
-import FavoriteIcon from "../assets/heartIconEmpty.png"
 import "./FavoriteButton.css";
 
 // GraphQL

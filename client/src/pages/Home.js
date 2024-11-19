@@ -3,7 +3,7 @@ import { Card, Button, CardColumns, Container } from 'react-bootstrap';
 import { GET_STREAM } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 import LikeIcon from '../assets/likeArrowBoxIcon.png';
-import CommentIcon from '../assets/roundCommentBoxIcon.png';
+import CommentIcon from '../assets/drawnCommentIcon.png';
 
 export function Home() {
   const { loading, data } = useQuery(GET_STREAM);
@@ -35,7 +35,7 @@ export function Home() {
                       height="25"
                       alt="Noft Custom Icon" />{reprint.commentCount}</Card.Text>
                   <Card.Text>NoFT Author: <Card.Link href={`/profile/${reprint.author}`}>{reprint.author}</Card.Link> </Card.Text>
-                  <Button variant="primary"><a href={`${reprint.asset}`} download>Download</a></Button>
+                  <Button variant="primary" >Download</Button>
                 </Card.Body>
               </Card>
             );

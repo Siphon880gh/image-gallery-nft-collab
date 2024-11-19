@@ -56,11 +56,12 @@ const Profile = props => {
             <p>Total Reprints: {user.reprintCount}</p>
             <p>Total Favorite Counts: {user.favoriteCount}</p>
 
-            { Auth.loggedIn() && (
-                <button className="follow-btn" onClick={handleFollow}>
-                    Follow
-                </button>
-            )}
+            { Auth.loggedIn() &&
+                Auth.getProfile().data.username !== userParam && (
+                    <button className="follow-btn" onClick={handleFollow}>
+                        Follow
+                    </button>
+                )}
 
             <h2>{user.username}'s Reprints:</h2>
             {user.reprints.map((userReprint, itrIndex) => {

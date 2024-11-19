@@ -4,23 +4,26 @@
 .favorite-btn:not(.can-favorite)::before {
     content: "Unfavorite";
 } */
+
 .favorite-btn {
     float: right;
+    background: #ffff;
 }
+
 .favorite-btn.can-favorite {
-    width: 25px;
-    height: 25px;
-    background-image: url(../assets/heartIconEmpty.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-width: 0;
-}
-.favorite-btn:not(.can-favorite) {
-    width: 25px;
-    height: 25px;
-    background-image: url(../assets/drawnHeartIcon.png);
+    width: 100px;
+    height: 60px;
+    background-image: url(../assets/favoriteBoxEmpty.png);
     background-size: contain;
     background-repeat: no-repeat;
     border-width: 0;
 }
 
+.favorite-btn:not(.can-favorite) {
+    width: 100px;
+    height: 60px;
+    background-image: url(../assets/favoriteBoxOrange.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-width: 0;
+}
