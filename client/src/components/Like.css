@@ -1,4 +1,8 @@
-.like-count::before {
+.btn-like {
+    cursor: pointer;
+}
+
+ .like-count::before {
     content: "(";
 }
 

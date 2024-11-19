@@ -33,6 +33,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
 
     if (Auth.loggedIn())
       return (<img
+        className="btn-like"
         src={NotLikedIcon}
         width="70"
         height="34"
@@ -60,6 +61,7 @@ const Likes = function ({ singleReprint, otherAuth }) {
   const LikedIconJSX = () => {
     if (Auth.loggedIn())
       return (<img
+        className="btn-like"
         src={LikedIcon}
         width="70"
         height="34"

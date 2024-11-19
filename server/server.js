@@ -6,7 +6,7 @@ const path = require('path');
 
 // Server dependencies
 const { typeDefs, resolvers } = require('./schemas');
-const { authMiddleware } = require('./utils/auth');
+const { authMiddleware, permanentlyRevoke } = require('./utils/auth');
 const db = require('./config/connection');
 
 // Server
@@ -32,7 +32,12 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// // Other URIs serve the frontend homepage
+// Revoke user
+app.get("/revoke", (req, res)=> {
+    permanentlyRevoke();
+});
+
+// Other URIs serve the frontend homepage
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });

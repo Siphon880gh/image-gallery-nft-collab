@@ -74,6 +74,13 @@ class AuthService {
     // this will reload the page and reset the state of the application
     window.location.assign('/');
   }
+
+  permanentlyRevoke() {
+    console.log("Permanently revoked user on the browser");
+    debugger;
+    localStorage.removeItem("id_token");
+    window.location.assign('/');
+  } // permanentlyRevoke
 }
 
 export default new AuthService();

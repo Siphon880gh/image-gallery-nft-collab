@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken');
 require("dotenv").config({path:"./config/.env"});
 const process = require("process");
 
+// For permanently revoking user
+const { User } = require("../models");
+
 // set token secret and expiration date
 const secret = process.env.JWT_PASS; // TODO: Future production version will have this in an .env file
 const secretGoogleCloud = {
@@ -82,4 +85,23 @@ module.exports = {
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
+
+  permanentlyRevoke: async function (context) {
+
+    // let token = req.body.token || req.query.token || req.headers.authorization;
+    // const { data: context } = jwt.verify(token, secret, { expiresIn: expiration });
+    
+    if(context.user) {
+      console.log("Attempt deleting user id: " + context.user._id);
+      const deletedUser = await User.findByIdAndRemove(context.user._id);
+      if (!deletedUser)
+        console.log({error:"Cannot find user to delete"});
+      else
+        console.log({
+          debug:`Should be deleted username ${context.user.username} / id ${context.user._id}`,
+          deletedUser
+        });
+        console.log("Permanently revoked user on the server");
+    }
+  } // permanentlyRevoke
 };

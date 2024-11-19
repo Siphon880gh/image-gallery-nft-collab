@@ -171,7 +171,6 @@ mutation deleteUser($username: String!){
 }
 `;
 
-
 export const DELETE_USER_V2 = gql`
 mutation {
   deleteUserV2 {
