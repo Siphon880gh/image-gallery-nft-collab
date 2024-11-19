@@ -5,6 +5,7 @@ import { GET_ME } from '../utils/queries';
 import HeartIcon from '../assets/drawnHeartIcon.png';
 import CommentIcon from '../assets/drawnCommentIcon.png';
 import Auth from '../utils/auth';
+import PostCard from "../components/PostCard";
 
 const Favorites = () => {
 
@@ -25,22 +26,9 @@ const Favorites = () => {
             <h2>
                 Viewing Your Favorite Reprints.
         </h2>
-            {user.favorites.map((favorites, itrIndex) => {
+            {user.favorites.map((favorite, itrIndex) => {
                 return (
-                    <Card key={favorites._id} style={{ width: '18rem' }}>
-                        <Card.Body>
-                            <Card.Title ><Card.Link href={`/post/${favorites._id}`}>{favorites.title}</Card.Link></Card.Title>
-                            <Card.Img variant="top" src={favorites.asset} />
-                            <Card.Text><img src={HeartIcon}
-                                width="25"
-                                height="25"
-                                alt="Noft Custom Icon" />{favorites.likeCount}<img src={CommentIcon}
-                                    width="25"
-                                    height="25"
-                                    alt="Noft Custom Icon" />{favorites.commentCount}</Card.Text>
-                            <Card.Text>NoFT Author: <Card.Link href={`/profile/${favorites.author}`}>{favorites.author}</Card.Link> </Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <PostCard key={favorite._id} postcard={favorite}/>
                 );
             })}
 
