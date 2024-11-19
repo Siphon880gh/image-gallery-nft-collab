@@ -84,7 +84,6 @@ const Likes = function({singleReprint, otherAuth}) {
         <span>
           <strong>{singleReprint.likeCount} Likes</strong>
           <img
-            img
             src={LikedIcon}
             width="25"
             height="25"
