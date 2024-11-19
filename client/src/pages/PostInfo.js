@@ -56,6 +56,5 @@ export function PostInfo() {
         </div>
     );
 };
-// Export addPost
-export default PostInfo;
 
+export default PostInfo;
