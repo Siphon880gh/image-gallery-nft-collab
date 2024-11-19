@@ -1,12 +1,14 @@
 import React from 'react';
 import Figure from 'react-bootstrap/Figure'
+import MeetTeam from '../assets/meetTheNoFTeam.png';
+
 
 const MeetTheTeam = () => {
 
     return (
         <div>
-            <h1>Meet The Team!</h1>
-            
+            <img src={MeetTeam} />
+
             <section>
                 <h2>About the NoFTeam</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -29,7 +31,7 @@ const MeetTheTeam = () => {
                         <p>Description</p>
                     </Figure.Caption>
                 </Figure>
-                
+
                 <h3>Name Example:</h3>
                 <Figure>
                     <Figure.Image

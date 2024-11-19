@@ -7,8 +7,8 @@ import Footer, { FooterPushDown } from './components/Footer';
 
 // Pages
 import Home from './pages/Home';
-import TestParam from './pages/TestParam';
-import TestParamNone from './pages/TestParamNone';
+// import TestParam from './pages/TestParam';
+// import TestParamNone from './pages/TestParamNone';
 import About from './pages/About';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
@@ -45,8 +45,8 @@ function App() {
             <Route exact path='/post/:id' component={Favorites} />
             <Route exact path='/favorites/:username?' component={Favorites} />
             <Route exact path='/favorites/me' component={Favorites} />
-            <Route exact path='/test-param/me' component={TestParamNone} />
-            <Route exact path='/test-param/:id' component={TestParam} />
+            {/* <Route exact path='/test-param/me' component={TestParamNone} />
+            <Route exact path='/test-param/:id' component={TestParam} /> */}
             <Route exact path='/about' component={About} />
             <Route exact path='/about/team' component={MeetTheTeam} />
             <Route exact path='/profile/me' component={Profile} />
