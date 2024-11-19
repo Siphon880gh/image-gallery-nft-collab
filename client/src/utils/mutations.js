@@ -162,3 +162,20 @@ mutation unfavorite($reprintId: ID!) {
   }
 }
 `;
+
+export const DELETE_USER = gql`
+mutation deleteUser($username: String!){
+  deleteUser(username: $username){
+    username
+  }
+}
+`;
+
+
+export const DELETE_USER_V2 = gql`
+mutation {
+  deleteUserV2 {
+    username
+  }
+}
+`;

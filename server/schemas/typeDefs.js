@@ -65,6 +65,8 @@ const typeDefs = gql`
     unlike(reprintId: ID!): Reprint
     favorite(reprintId: ID!): User
     unfavorite(reprintId: ID!): User
+    deleteUser(username: String!): User
+    deleteUserV2: User
   }
 `;
 

@@ -63,6 +63,7 @@ const userSchema = new Schema(
     toJSON: {
       virtuals: true,
       getters: true,
+      setters: true
     },
   }
 );
