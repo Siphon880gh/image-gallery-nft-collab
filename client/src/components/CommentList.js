@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { CardGroup } from 'react-bootstrap';
 
+const CommentCount = ({count}) => {
+    count = parseInt(count);
+    if(count==1) {
+        return <span className="commentCount">({count} comment)</span>
+    } else if(count>1) {
+        return <span className="commentCount">({count} comments)</span>
+    } else {
+        return <span className="commentCount"></span>
+    }
+}
+
 const CommentList = ({ comments }) => {
 
     return (<React.Fragment>
-        <h2>Comments</h2>
+        <h2>Comments <CommentCount count={comments.length}></CommentCount></h2>
         <CardGroup>
             <Card.Body >
                 {comments &&
