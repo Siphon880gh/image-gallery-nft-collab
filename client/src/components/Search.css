@@ -1,0 +1,24 @@
+.overlay-under-wrapper {
+    position: relative;
+}
+.overlay-under {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    padding: 5px;
+    border: 2px solid gray;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+}
+.overlay-under:empty {
+    display: none;
+}
+.overlay-under .suggestion-item {
+    margin: 0;
+    padding: 10px 5px 10px 5px;
+}
+.overlay-under .suggestion-item:hover {
+    background-color: lightgray;
+    text-decoration: none;
+}

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { GET_USERS_BY_FILTER } from "../utils/queries";
 import { useQuery } from "@apollo/react-hooks";
 import { Card } from "react-bootstrap";
-
+import "./Search.css";
 const Search = ({searchFilter}) => {
   console.log(searchFilter)
   const { loading, data } = useQuery(GET_USERS_BY_FILTER, {
@@ -14,19 +14,19 @@ const Search = ({searchFilter}) => {
   
   const Results = ({users}) => {
     return (
-      <>
+      <div className="overlay-under">
       {console.log({users}, {data})}
         {users.map((user, index) => (
-          <Card
-            className="tester"
+          <div 
+            className="suggestion-item"
             key={user.username}
             user={user}
             index={index}
           >
            <a href={"/profile/"+user.username}>{user.username}</a>
-          </Card>
+          </div>
         ))}
-      </>
+      </div>
     );
   };
   return (
