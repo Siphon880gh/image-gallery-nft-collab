@@ -1,0 +1,6 @@
+.reprint-detail-label {
+    font-weight: 800;
+}
+.reprint-detail-label::after {
+    content: "\00a0";
+}
