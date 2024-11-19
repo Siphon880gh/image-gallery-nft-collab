@@ -159,7 +159,7 @@ export default function AddPost(props) {
                         if (_id) {
                             // console.log("Updated Mongoose");
                             // console.log({_id});
-                            window.location.href = `/post/${_id}`;
+                            window.location.href = `/app/image-gallery-nft-collab/post/${_id}`;
                         } else {
                             console.error("Mongoose Error: Adding reprint failed")
                         }

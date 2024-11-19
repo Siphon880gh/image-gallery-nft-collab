@@ -63,7 +63,7 @@ export default function PostInfo() {
                     <Card.Body>
                         <Card.Title>
                             <label className="reprint-detail-label">Author:</label>
-                            <a href={`/profile/${singleReprint.author}`}>{singleReprint.author}</a
+                            <a href={`/app/image-gallery-nft-collab/profile/${singleReprint.author}`}>{singleReprint.author}</a
                         ></Card.Title>
                         <Card.Title>
                             <label className="reprint-detail-label">NFT Market URL:</label>

@@ -6,4 +6,5 @@ node_modules/
 .sass-cache/
 *.css.map
 out/
-*.env
+.env
+package-lock.json

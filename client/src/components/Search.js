@@ -21,7 +21,7 @@ const Search = ({searchFilter}) => {
             user={user}
             index={index}
           >
-           <a href={"/profile/"+user.username}>{user.username}</a>
+           <a href={"/app/image-gallery-nft-collab/profile/"+user.username}>{user.username}</a>
           </div>
         ))}
       </div>

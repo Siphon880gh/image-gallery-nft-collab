@@ -44,8 +44,8 @@ export default function PostCard({postcard}) {
             <Card.Body>
             
             <div className="post-header"><Card.Title className="title">
-                <Card.Link href={`/post/${postcard._id}`}>{postcard.title}</Card.Link></Card.Title>
-                <Card.Subtitle>NoFT Author: <Card.Link href={`/profile/${postcard.author}`}>{postcard.author}</Card.Link> </Card.Subtitle>
+                <Card.Link href={`/app/image-gallery-nft-collab/post/${postcard._id}`}>{postcard.title}</Card.Link></Card.Title>
+                <Card.Subtitle>NoFT Author: <Card.Link href={`/app/image-gallery-nft-collab/profile/${postcard.author}`}>{postcard.author}</Card.Link> </Card.Subtitle>
             </div>
             
 

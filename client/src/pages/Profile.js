@@ -260,7 +260,7 @@ const Profile = (props) => {
                       <ListGroup.Item key={listee._id}>
                         <a
                           className="listee-detail-label"
-                          href={"/profile/" + listee.username}
+                          href={"/app/image-gallery-nft-collab/profile/" + listee.username}
                         >
                           {listee.username}
                         </a>
@@ -289,7 +289,7 @@ const Profile = (props) => {
                       <ListGroup.Item key={listee._id}>
                         <a
                           className="listee-detail-label"
-                          href={"/profile/" + listee.username}
+                          href={"/app/image-gallery-nft-collab/profile/" + listee.username}
                         >
                           {listee.username}
                         </a>
