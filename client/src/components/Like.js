@@ -5,51 +5,46 @@ import { useQuery, useMutation } from "@apollo/react-hooks";
 import LikedIcon from "../assets/heartBoxIcon.png";
 import NotLikedIcon from "../assets/heartIconEmpty.png";
 import Auth from "../utils/auth";
-const Likes = ({singleReprint}) => {
 
-  const [liked, setLiked] = useState(false);
+const Likes = function({singleReprint, otherAuth}) {
+  const likedByIds = singleReprint.likes.map(likeObject=>likeObject._id);
+  const myId = Auth.getProfile().data._id;
+  const isLikedByMe = likedByIds.includes(myId);
+
+  // console.log("Below two types should match");
+  // console.log(typeof Auth.getProfile().data._id);
+  // console.log(typeof singleReprint.likes[0]);
+
+  // console.log("What is 0th index of like:", singleReprint.likes[0]._id);
+
+  const [liked, setLiked] = useState(isLikedByMe);
   const [likeNoft] = useMutation(LIKE);
   const [unlikeNoft] = useMutation(UNLIKE);
   let { _id: reprintId } = useParams();
 
-  debugger;
+  // console.log(Auth.getProfile().data._id);
+  console.log({isLikedByMe});
   if (singleReprint.likes.includes(Auth.getProfile().data._id)) {
     setLiked(true);
   }
 
+  function renderLikeButton(like) {
+    debugger;
+    if(liked)
+      return (
+        <span>Unlike</span>
+      )
+    else
+      return (
+        <span>Like</span>
+      )
+  } // renderLikeButton
+
   return (
-    <div>
-      {Auth.loggedIn() && (
-        <>
-          {!liked && (
-            <button
-              img
-              src={NotLikedIcon}
-              width="25"
-              height="25"
-              alt="Noft Not-Liked Icon"
-              onClick={() => {
-                likeNoft({ reprintId });
-                setLiked(true);
-              }}
-            />
-          )}
-          {liked && (
-            <button
-              img
-              src={LikedIcon}
-              width="25"
-              height="25"
-              alt="Noft Liked Icon"
-              onClick={() => {
-                unlikeNoft({ reprintId });
-                setLiked(false);
-              }}
-            />
-          )}
-        </>
-      )}
-      {singleReprint.likeCount ? (
+      <>
+      {renderLikeButton(liked)}
+
+      {Boolean(singleReprint.likeCount.length) ? (
         <span>
           <strong>{singleReprint.likeCount}</strong>
           <img
@@ -57,7 +52,7 @@ const Likes = ({singleReprint}) => {
             src={LikedIcon}
             width="25"
             height="25"
-            alt="Noft Liked Icon"
+            alt="Noft Count"
           />
         </span>
       ) : (
@@ -65,7 +60,7 @@ const Likes = ({singleReprint}) => {
           <strong>0 Likes</strong>
         </>
       )}
-    </div>
+      </>
   );
 };
 export default Likes;

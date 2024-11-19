@@ -6,7 +6,7 @@ class AuthService {
   // get user data
   getProfile() {
     return decode(this.getToken());
-    // The reverse of { data: { username, email, _id } ?
+    // Decodes to { data: { username, email, _id }
   }
 
   // check if user's logged in
