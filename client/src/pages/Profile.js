@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { GET_USER, GET_ME } from '../utils/queries';
-import { FOLLOW } from '../utils/mutations';
+import { FOLLOW, UNFOLLOW } from '../utils/mutations';
 
 import LikeIcon from '../assets/likeArrowBoxIcon.png';
 import CommentIcon from '../assets/commentIconBox.png';
@@ -16,8 +16,19 @@ const Profile = props => {
         variables: { username: userParam }
     });
 
+    const { loading: loadingAmIAFollower, data: AmIAFollowerData} = useQuery(GET_USER,{
+        variables: { username: userParam }
+    });
+    let followers = AmIAFollowerData?.author?.followers || [];
+    const amIAFollower = followers.includes(Auth.getProfile().data._id);
+
+    console.assert(AmIAFollowerData?.author?._id, "606cfd620abdef61c7d724c0");
+    console.assert(Auth.getProfile().data._id, "606cfd733d45c95aecb96315");
+    // console.log("*****", amIAFollower);
+
     const user = data?.me || data?.author || {};
     const [follow] = useMutation(FOLLOW);
+    const [unfollow] = useMutation(UNFOLLOW);
     // redirect to personal profile page if username is yours
     if (
         Auth.loggedIn() &&
@@ -31,12 +42,23 @@ const Profile = props => {
     }
 
     const handleFollow = async () => {
-        try {
-            await follow({
-                variables: { followedId: user._id }
-            });
-        } catch (e) {
-            console.error(e);
+        const amAFollower = true; // TODO
+        if(amAFollower) {
+            try {
+                await follow({
+                    variables: { followedId: user._id }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        } else {
+            try {
+                await unfollow({
+                    variables: { followedId: user._id }
+                });
+            } catch (e) {
+                console.error(e);
+            }
         }
     };
 
@@ -48,7 +70,7 @@ const Profile = props => {
             <div >
                 <h2>
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-        </h2>
+                </h2>
 
             </div>
             <p>Followers: {user.followerCount}</p>

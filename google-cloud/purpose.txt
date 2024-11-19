@@ -1,0 +1,14 @@
+This folder is kept for enabling CORS on the Google Cloud Servers to enable downloading images.
+
+Firebase is using the same storage infrastructure as Google cloud and even though there is no Firebase method to set the cors rules, you can use gc set up. First you need to install google cloud sdk:
+```
+
+```
+
+Then we set the cors.json settings to (the Google Cloud server and Firebase Storage dashboards have no CORS page):
+```
+gsutil cors set cors.json gs://reprint-fd4e0.appspot.com
+```
+
+Note:
+The bucket and other information were found from running storageRef.getMetadata() with the Firebase Storage SDK.
