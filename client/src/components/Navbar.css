@@ -1,0 +1,26 @@
+.site-navbar .flex-fill-in {
+    width: 100%;
+}
+.site-navbar .form-inline, .site-navbar .searchWrapper {
+    min-height: 38px !important;
+    max-height: 38px !important;
+    height: 38px !important;
+}
+
+/* Mobile responsive navbar search */
+.site-navbar .form-inline {
+    margin-left: 1ch;
+}
+.form-inline {
+    margin-right: .5rem;
+}
+@media (min-width: 770px) {
+    .site-navbar .form-inline input {
+        width: 340px;
+    }
+}
+@media (min-width: 920px) {
+    .site-navbar .form-inline {
+        margin-left: 130px;
+    }
+}
