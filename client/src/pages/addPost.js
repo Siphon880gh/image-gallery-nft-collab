@@ -1,11 +1,27 @@
 // Create a skeletal structure of what our addPost page will look like
 // Set up imports at the top
-import React from 'react';
+import React, { useState } from "react";
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import firebase from "firebase/app";
+// Add the Firebase services that you want to use
+import "firebase/auth";
+import "firebase/firestore";
+import 'firebase/storage'
+// Generate random hash for filenames
+import generateHash from 'random-hash';
+import process from "process";
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import Auth from "../utils/auth";
+
+let signedIn = false;
+
+
 // Create a const for postForm that'll return JSX
-const postForm = () => {
+const AddPost = props => {
 
     // Return JSX
     return (
@@ -13,7 +29,7 @@ const postForm = () => {
             <div>
                 <h1>Post A Reprint!</h1>
             </div>
-            
+
             <Form>
                 {/* Choose File Button */}
                 <Form.Group>
@@ -23,13 +39,13 @@ const postForm = () => {
                 {/* Add A Title */}
                 <Form.Group controlId="titleInput">
                     <Form.Label>Add A Title:</Form.Label>
-                    <Form.Control/>
+                    <Form.Control />
                 </Form.Group>
 
                 {/* Add An Author */}
                 <Form.Group controlId="authorInput">
                     <Form.Label>Add An Author:</Form.Label>
-                    <Form.Control/>
+                    <Form.Control />
                 </Form.Group>
 
                 {/* Add Market Listing */}
@@ -42,7 +58,7 @@ const postForm = () => {
                 {/* Captions */}
                 <Form.Group controlId="captionInput">
                     <Form.Label>Add A Caption:</Form.Label>
-                    <Form.Control as="textarea" placeholder="Optional: Add a caption!"rows={3} />
+                    <Form.Control as="textarea" placeholder="Optional: Add a caption!" rows={3} />
                 </Form.Group>
 
                 {/* Submit */}
@@ -54,5 +70,5 @@ const postForm = () => {
         </div>
     )
 }
-// Export addPost
-export default postForm;
+
+export default AddPost;
