@@ -13,6 +13,7 @@ import Auth from '../utils/auth';
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   return (
     <>
@@ -64,7 +65,7 @@ const AppNavbar = () => {
                     />
                   </Nav.Link>
                   <Nav.Link as={Link} to='/profile/me'>Profile</Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={() => setShowLogoutModal(true)}>Logout</Nav.Link>
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
@@ -105,6 +106,26 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
+      {/* {Starting the modal for Logout} */}
+      <Modal
+        size='lg'
+        show={showLogoutModal}
+        onHide={() => setShowLogoutModal(false)}
+        aria-labelledby='logout-modal'>
+        <Modal.Header closeButton>
+          <Modal.Title id='logout-modal'>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to logout?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowLogoutModal(false)}>
+            Not yet!
+          </Button>
+          <Button variant="primary" onClick={Auth.logout}>
+            I want to logout!
+          </Button>
+        </Modal.Footer>
+      </Modal >
     </>
   );
 };
