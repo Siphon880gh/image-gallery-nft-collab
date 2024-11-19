@@ -1,9 +1,9 @@
-.favorite-btn.favoriting {
+.favorite-btn.can-favorite {
     border: 1px solid pink;
 }
-.favorite-btn.favoriting::before {
+.favorite-btn.can-favorite::before {
     content: "Favorite";
 }
-.favorite-btn:not(.favoriting)::before {
+.favorite-btn:not(.can-favorite)::before {
     content: "Unfavorite";
 }
