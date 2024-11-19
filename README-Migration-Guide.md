@@ -10,7 +10,9 @@ Base URL - Here's how you replace the baseURL for this app:
 - Run grep for `/app/image-gallery-nft-collab/` and replace with your new baseURL. Or you may use sed to match and replace.
 - Run grep for `/app/image-gallery-nft-collab` and replace with your new baseURL. Or you may use sed to match and replace.
 
-Envs: ./.env and ./client/.env
+Envs:
+- ./.env
+- ./client/.env
 
 Reverse Proxies:
 - `/app/image-gallery-nft-collab[/]*` proxy passes to `127.0.0.1:PORT_GRAPHQL` where PORT_GRAPHQL is the unique Express-serving-GraphQL port.
