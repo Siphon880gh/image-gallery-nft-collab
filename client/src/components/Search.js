@@ -7,7 +7,8 @@ import { Card } from "react-bootstrap";
 const Search = ({searchFilter}) => {
   console.log(searchFilter)
   const { loading, data } = useQuery(GET_USERS_BY_FILTER, {
-    variables: {username: searchFilter}
+    //dumbest fix in the world -AG
+    variables: {username: searchFilter.searchFilter}
   });
   const users = data?.usersByFilter || [];
   // const Bar = (props) => {
