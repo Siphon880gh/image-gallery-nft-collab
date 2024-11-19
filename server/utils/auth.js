@@ -8,8 +8,8 @@ const { User } = require("../models");
 // set token secret and expiration date
 const secret = process.env.JWT_PASS; // TODO: Future production version will have this in an .env file
 const secretGoogleCloud = {
-  auth: process.env.GOOGLE_CLOUD_AUTH,
-  storage: process.env.GOOGLE_CLOUD_STORAGE2
+  auth: typeof process?.env?.GOOGLE_CLOUD_AUTH==="string"?JSON.parse(process?.env?.GOOGLE_CLOUD_AUTH):process?.env?.GOOGLE_CLOUD_AUTH,
+  storage: typeof process?.env?.GOOGLE_CLOUD_STORAGE2==="string"?JSON.parse(process?.env?.GOOGLE_CLOUD_STORAGE2):process?.env?.GOOGLE_CLOUD_STORAGE2,
 }
 
 const expiration = '2h';
