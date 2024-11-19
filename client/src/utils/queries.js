@@ -159,8 +159,8 @@ query {
 }`;
 
 export const GET_SINGLE_CARD = gql`
-query reprint($id: ID!){
-  reprint(_id: $id){
+query reprintById($noftId: ID!){
+  reprintById(_id: $noftId){
     _id
     title
     asset
@@ -191,4 +191,18 @@ query findFavorites($id: ID!) {
     likeCount
     commentCount
   }
-}` */
+}`;
+
+export const MY_FAVORITES = gql`
+query {
+  myFavorites {
+    favorites {
+        _id
+        title
+        asset
+        author
+        commentCount
+        likeCount
+    }
+  }
+}`;

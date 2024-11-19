@@ -1,80 +1,85 @@
-// Create a skeletal structure of what our addPost page will look like
-// Set up imports at the top
 import React from 'react';
+import {Container} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
 
+// PostInfo same level components
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
-import LikeIcon from '../assets/likeArrowBoxIcon.png';
 
-
+// PostInfo Component dependencies
 import Auth from '../utils/auth';
 import { GET_SINGLE_CARD } from '../utils/queries';
-import { FAVORITE, UNFAVORITE } from '../utils/mutations';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
 
+// Styling
+import "./PostInfo.css";
+
+// Subcomponents
+import Likes from '../components/Like';
+import FavoriteButton from '../components/FavoriteButton';
+
+// Get favorite Ids to compare against post to see if favorite (placed here instead of inside FavoriteButton to workaround Reacth render limit error)
+import { MY_FAVORITES } from "../utils/queries";
+
+import LoadingSpindle from "../assets/spinner-1.3s-200px.png";
 
 // Create a const for postForm that'll return JSX
-export function PostInfo() {
+export default function PostInfo() {
+    // Get post info
     let { noftId } = useParams();
-    const { loading, data } = useQuery(GET_SINGLE_CARD, {
+    const { loading: postLoading, data } = useQuery(GET_SINGLE_CARD, {
         variables: { noftId: noftId }
     });
-    const [favorite] = useMutation(FAVORITE);
     const singleReprint = data?.reprintById || {};
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // User's favorite Ids. Return empty array if not logged in
+    let { loading: favoriteIdsLoading, data: favoritesData } = useQuery(MY_FAVORITES);
+    let favoritesList = favoritesData?.myFavorites?.favorites || [];
+    let favoritedIds = favoritesList.map(favObj => favObj._id);
+
+    if (!noftId)
+        return <div className="text-danger bg-warning p-3 m-5">Error: Malformed URL. Please press back. Did you mean to visit a post URL? It's missing a Post ID in the URL.</div>
+    else if (postLoading || favoriteIdsLoading) {
+        return <div><img src={LoadingSpindle}></img></div>;
+    } else
+        return (
+            <Container>
+                <section className="mt-5 text-center">
+                    <h1>{singleReprint.title}</h1>
+                </section>
+
+                <Image src={singleReprint.asset} fluid className="center-block mt-5 mb-5" />
+
+                {singleReprint.caption &&
+                (
+                    <Card>
+                        <Card.Body>{singleReprint.caption}</Card.Body>
+                    </Card>
+                )}
+
+                <Card className="mb-5">
+                    <Card.Body>
+                        <Card.Title>
+                            <label className="reprint-detail-label">Author:</label>
+                            <a href={`/profile/${singleReprint.author}`}>{singleReprint.author}</a
+                        ></Card.Title>
+                        <Card.Title>
+                            <label className="reprint-detail-label">NFT Market URL:</label>
+                            <Card.Link href={`${singleReprint.marketListing}`}>{singleReprint.marketListing}</Card.Link>
+                        </Card.Title>
+                        <Likes singleReprint={singleReprint} noftId={noftId}></Likes>
+                        {Auth.loggedIn() && !favoriteIdsLoading && (
+                            <FavoriteButton noftId={noftId} favoritedIds={favoritedIds}></FavoriteButton>
+                        )}
+                    </Card.Body>
+                </Card>
 
 
+                {singleReprint.commentCount > 0 && <CommentList comments={singleReprint.comments} />}
 
-    const handleClick = async () => {
-        try {
-            await favorite({
-                variables: { reprintId: noftId }
-            });
-        } catch (e) {
-            console.error(e);
-        }
-    };
-
-
-    // Return JSX
-    return (
-        <div>
-            <section>
-                <h1>{singleReprint.title}</h1>
-            </section>
-
-            <Image src={singleReprint.asset} fluid />
-
-            <Card>
-                <Card.Body>{singleReprint.caption}</Card.Body>
-            </Card>
-
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title><Card.Link href={`/profile/${singleReprint.author}`}>{singleReprint.author}</Card.Link></Card.Title>
-                    <Card.Title><Card.Link href={`${singleReprint.marketListing}`}>{singleReprint.marketListing}</Card.Link></Card.Title>
-                    <Card.Title>{singleReprint.caption}</Card.Title>
-                    <Card.Title>{singleReprint.likeCount}</Card.Title>
-                    {Auth.loggedIn() && (
-                        <button className="favorite-btn" onClick={handleClick}>
-                            Favorite
-                        </button>
-                    )}
-                </Card.Body>
-            </Card>
-
-
-            {singleReprint.commentCount > 0 && <CommentList comments={singleReprint.comments} />}
-
-            {Auth.loggedIn() && <CommentForm reprintId={singleReprint._id} />}
-        </div>
-    );
+                {Auth.loggedIn() && <CommentForm reprintId={singleReprint._id} />}
+            </Container>
+        );
 };
-
-export default PostInfo;

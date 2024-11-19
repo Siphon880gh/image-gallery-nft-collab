@@ -13,10 +13,12 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
-import AddPost from './pages/addPost';
+import AddPost from "./pages/AddPost";
+import MeetTheTeam from './pages/Team';
+import PostInfo from './pages/PostInfo';
 
-import NoftCard from './components/NoftCard';
-
+import CommentList from './components/CommentList'
+import CommentForm from './components/CommentForm'
 
 // Add Apollo context components
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -45,14 +47,15 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/post/new' component={Home} />
-            <Route exact path='/post/:id' component={Favorites} />
+            <Route exact path='/post/new' component={AddPost} />
+            <Route exact path='/post/:noftId?' component={PostInfo} />
             <Route exact path='/favorites/:username?' component={Favorites} />
             <Route exact path='/favorites/me' component={Favorites} />
             <Route exact path='/about' component={About} />
             <Route exact path='/about/team' component={MeetTheTeam} />
             <Route exact path='/profile/:username?' component={Profile} />
-            <Route exact path='/' component={Home} />
+            <Route exact path='/commentForm' component={CommentForm} />
+            <Route exact path='/commentList' component={CommentList} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
           <FooterPushDown />

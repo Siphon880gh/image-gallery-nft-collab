@@ -2,8 +2,7 @@ import React from 'react';
 import { CardColumns, Container } from 'react-bootstrap';
 import { GET_STREAM } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
-import LikeIcon from '../assets/likeArrowBoxIcon.png';
-import CommentIcon from '../assets/drawnCommentIcon.png';
+import PostCard from "../components/PostCard";
 
 import LoadingSpindle from "../assets/spinner-1.3s-200px.png";
 
@@ -26,24 +25,11 @@ export function Home() {
         <CardColumns>
           {streamnofts.map((reprint, itrIndex) => {
             return (
-              <Card key={reprint._id}>
-                <Card.Body>
-                  <Card.Title ><Card.Link href={`/post/${reprint._id}`}>{reprint.title}</Card.Link></Card.Title>
-                  <Card.Img variant="top" src={reprint.asset} />
-                  <Card.Text><img src={LikeIcon}
-                    width="25"
-                    height="25"
-                    alt="Noft Custom Icon" />{reprint.likeCount}<img src={CommentIcon}
-                      width="25"
-                      height="25"
-                      alt="Noft Custom Icon" />{reprint.commentCount}</Card.Text>
-                  <Card.Text>NoFT Author: <Card.Link href={`/profile/${reprint.author}`}>{reprint.author}</Card.Link> </Card.Text>
-                  <Button variant="primary" >Download</Button>
-                </Card.Body>
-              </Card>
+              <PostCard key={reprint._id} postcard={reprint}></PostCard>
             );
           })}
         </CardColumns>
+
       </Container>
     )
     }
