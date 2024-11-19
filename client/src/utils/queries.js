@@ -105,9 +105,9 @@ query author($username: String!) {
 
   }`
 
-  export const GET_USER_BY_FILTER = gql`
-query getUserByFilter($username: String!) {
-  getUserByFilter(username: $username) {
+  export const GET_USERS_BY_FILTER = gql`
+query usersByFilter($username: String!) {
+  usersByFilter(username: $username) {
     _id
     username
     email
