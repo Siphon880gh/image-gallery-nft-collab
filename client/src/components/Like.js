@@ -12,6 +12,7 @@ const Likes = ({singleReprint}) => {
   const [unlikeNoft] = useMutation(UNLIKE);
   let { _id: reprintId } = useParams();
 
+  debugger;
   if (singleReprint.likes.includes(Auth.getProfile().data._id)) {
     setLiked(true);
   }
