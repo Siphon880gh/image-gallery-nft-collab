@@ -13,7 +13,7 @@
 
 :computer: Live Deployment:
 ---
-[Browse NoFT](https://reprint-media.herokuapp.com/)
+[Browse NoFT](https://wengindustries.com/app/image-gallery-nft-collab/)
 
 :camera: Preview:
 ---
