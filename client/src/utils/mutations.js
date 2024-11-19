@@ -24,3 +24,18 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($reprintId: ID!, $commentBody: String!) {
+    addComment(reprintId: $reprintId, commentBody: $commentBody) {
+      _id
+      commentCount
+      comments {
+        _id
+        commentBody
+        createdAt
+        author
+      }
+    }
+  }
+`;

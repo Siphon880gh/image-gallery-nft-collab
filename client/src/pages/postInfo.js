@@ -6,15 +6,19 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router-dom';
+
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
+import Auth from '../utils/auth';
 import { GET_SINGLE_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
 
 // Create a const for postForm that'll return JSX
 export function PostInfo() {
-    let { title } = useParams();
+    let { title: noftTitle } = useParams();
     const { loading, data } = useQuery(GET_SINGLE_CARD, {
-        variables: { title }
+        variables: { title: noftTitle }
     });
     const singleReprint = data?.reprint || {};
 
@@ -44,29 +48,10 @@ export function PostInfo() {
                 </Card.Body>
             </Card>
 
-            <Card>
-                <Card.Header> <h3> Comment Section: </h3> </Card.Header>
-                <Card.Body>
-                    <blockquote className="blockquote mb-0">
-                        <p>
-                            {' '}
-                            Comment Text: {' '}
-                        </p>
-                        <footer className="blockquote-footer">
-                            Different User:
-                    </footer>
-                    </blockquote>
-                </Card.Body>
-            </Card>
 
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label><h3>Add A Comment:</h3></Form.Label>
-                <Form.Control placeholder="Share your thoughts..." as="textarea" rows={3} />
-                {/* Submit */}
-                <Button variant="primary" type="submit">
-                    Post Comment
-                </Button>
-            </Form.Group>
+            {singleReprint.commentCount > 0 && <CommentList comments={singleReprint.comments} />}
+
+            {Auth.loggedIn() && <CommentForm reprintId={singleReprint._id} />}
         </div>
     );
 };

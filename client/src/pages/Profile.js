@@ -3,7 +3,6 @@ import { Redirect, useParams } from 'react-router-dom';
 import { Container, Card, Button, Link } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER, GET_ME } from '../utils/queries';
-import NoftCard from '../components/NoftCard';
 import Auth from '../utils/auth';
 
 const Profile = props => {

@@ -3,7 +3,6 @@ import { Redirect, useParams } from 'react-router-dom';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER, GET_ME, GET_FAVORITES } from '../utils/queries';
-import NoftCard from '../components/NoftCard';
 import Auth from '../utils/auth';
 
 const Favorites = props => {
