@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-require("dotenv").config({path:"./config/.env"});
 const process = require("process");
+require("dotenv").config({path:"../.env"});
 
 // For permanently revoking user
 const { User } = require("../models");
@@ -11,6 +11,9 @@ const secretGoogleCloud = {
   auth: typeof process?.env?.GOOGLE_CLOUD_AUTH==="string"?JSON.parse(process?.env?.GOOGLE_CLOUD_AUTH):process?.env?.GOOGLE_CLOUD_AUTH,
   storage: typeof process?.env?.GOOGLE_CLOUD_STORAGE2==="string"?JSON.parse(process?.env?.GOOGLE_CLOUD_STORAGE2):process?.env?.GOOGLE_CLOUD_STORAGE2,
 }
+
+// console.log("ENV test from server/utils/auth")
+// console.log(process.env.JWT_PASS)
 
 const expiration = '2h';
 
