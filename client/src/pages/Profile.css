@@ -9,3 +9,12 @@
 .follow-btn {
     width: 185px !important;
 }
+
+.link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
