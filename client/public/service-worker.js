@@ -25,7 +25,6 @@ self.addEventListener("fetch", event => {
     if(!event.request.url.includes("graphql")) {
         event.respondWith(
             caches.match(event.request).then(response => {
-                // console.log("cached:", {er: event.request, e: event});
                 return response || fetch(event.request);
             })
         );

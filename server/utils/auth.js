@@ -39,7 +39,7 @@ module.exports = {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
-      console.log('Invalid token');
+      // console.log('Invalid token');
       return res.status(400).json({ message: 'invalid token!' });
     }
 
@@ -69,7 +69,7 @@ module.exports = {
       // const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
-      console.log('Invalid token');
+      // console.log('Invalid token');
     }
 
     return req;
@@ -92,16 +92,17 @@ module.exports = {
     // const { data: context } = jwt.verify(token, secret, { expiresIn: expiration });
     
     if(context.user) {
-      console.log("Attempt deleting user id: " + context.user._id);
+      // console.log("Attempt deleting user id: " + context.user._id);
       const deletedUser = await User.findByIdAndRemove(context.user._id);
-      if (!deletedUser)
-        console.log({error:"Cannot find user to delete"});
-      else
-        console.log({
-          debug:`Should be deleted username ${context.user.username} / id ${context.user._id}`,
-          deletedUser
-        });
-        console.log("Permanently revoked user on the server");
-    }
+      if (!deletedUser) {
+        // console.log({error:"Cannot find user to delete"});
+      } else {
+        // console.log({
+        //   debug:`Should be deleted username ${context.user.username} / id ${context.user._id}`,
+        //   deletedUser
+        // });
+        // console.log("Permanently revoked user on the server");
+      }
+    } // if
   } // permanentlyRevoke
 };

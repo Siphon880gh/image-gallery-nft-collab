@@ -84,16 +84,16 @@ export default function UploadForm(props) {
             state.selectedFile,
             state.selectedFile.name
         );
-        console.log(state.selectedFile);
+        // console.log(state.selectedFile);
 
 
         await storageRef.put(state.selectedFile)
             .then((snapshot) => {
-                console.log("Uploading started");
+                // console.log("Uploading started");
                 return snapshot.ref.getDownloadURL();
             }).then(downloadURL => {
-                console.log('Uploaded:');
-                console.log({ asset: downloadURL });
+                // console.log('Uploaded:');
+                // console.log({ asset: downloadURL });
 
                 //TODO: Send downloadURL to mongoose, probably using a mutation
 

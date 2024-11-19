@@ -76,7 +76,7 @@ class AuthService {
   }
 
   permanentlyRevoke() {
-    console.log("Permanently revoked user on the browser");
+    // console.log("Permanently revoked user on the browser");
     localStorage.removeItem("id_token");
     window.location.assign('/');
   } // permanentlyRevoke

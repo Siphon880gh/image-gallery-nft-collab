@@ -25,7 +25,7 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-console.log("MODE:" + process.env.NODE_ENV);
+// console.log("MODE:" + process.env.NODE_ENV);
 
 // Serve client/build as static assets if we're in production
 if (process.env.NODE_ENV === 'production') {
