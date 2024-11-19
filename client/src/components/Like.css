@@ -1,0 +1,7 @@
+.like-count::before {
+    content: "(";
+}
+
+.like-count::after {
+    content: ")";
+}

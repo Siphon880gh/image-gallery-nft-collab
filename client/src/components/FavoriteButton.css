@@ -1,9 +1,26 @@
-.favorite-btn.can-favorite {
-    border: 1px solid pink;
-}
-.favorite-btn.can-favorite::before {
+/* .favorite-btn.can-favorite::before {
     content: "Favorite";
 }
 .favorite-btn:not(.can-favorite)::before {
     content: "Unfavorite";
+} */
+.favorite-btn {
+    float: right;
 }
+.favorite-btn.can-favorite {
+    width: 25px;
+    height: 25px;
+    background-image: url(../assets/heartIconEmpty.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-width: 0;
+}
+.favorite-btn:not(.can-favorite) {
+    width: 25px;
+    height: 25px;
+    background-image: url(../assets/drawnHeartIcon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-width: 0;
+}
+

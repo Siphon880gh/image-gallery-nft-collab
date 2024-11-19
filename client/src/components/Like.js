@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { LIKE, UNLIKE } from "../utils/mutations";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-import LikedIcon from "../assets/heartBoxIcon.png";
-import NotLikedIcon from "../assets/heartIconEmpty.png";
+import LikedIcon from "../assets/likeThumbsOrange.png";
+import NotLikedIcon from "../assets/likeThumbsNone.png";
 import Auth from "../utils/auth";
+import "./Like.css";
 
 const Likes = function({singleReprint, otherAuth}) {
 
@@ -15,6 +16,7 @@ const Likes = function({singleReprint, otherAuth}) {
   const isLikedByMe = myId ? likedByIds.includes(myId) : null;
 
   const [liked, setLiked] = useState(isLikedByMe);
+  const [likeCount, setLikeCount] = useState(singleReprint.likeCount)
   const [likeNoft] = useMutation(LIKE);
   const [unlikeNoft] = useMutation(UNLIKE);
   let { noftId: reprintId } = useParams();
@@ -23,13 +25,17 @@ const Likes = function({singleReprint, otherAuth}) {
   // console.log({reprintId})
   // console.log({isLikedByMe, info: "Would be null if not logged in"});
 
+  function toggleLikeIncrement(diff) {
+    setLikeCount(likeCount+diff);
+  }
+
   const NotLikedIconJSX = ()=> {
     
     if(Auth.loggedIn())
-      return (<button
+      return (<img
             src={NotLikedIcon}
-            width="25"
-            height="25"
+            width="60"
+            height="24"
             alt="Noft Not-Liked Icon"
             onClick={() => {
               try {
@@ -43,8 +49,9 @@ const Likes = function({singleReprint, otherAuth}) {
               }
 
               setLiked(false);
+              toggleLikeIncrement(-1);
             }}
-          >Unlike</button>
+          ></img>
    )
    else
      return (<></>);
@@ -52,10 +59,10 @@ const Likes = function({singleReprint, otherAuth}) {
   
   const LikedIconJSX = ()=> {
     if(Auth.loggedIn())
-      return (<button
+      return (<img
             src={LikedIcon}
-            width="25"
-            height="25"
+            width="60"
+            height="24"
             alt="Noft Liked Icon"
             onClick={() => {
                 try {
@@ -69,8 +76,9 @@ const Likes = function({singleReprint, otherAuth}) {
                 }
                   
               setLiked(true);
+              toggleLikeIncrement(1);
             }}
-          >Like</button>
+          ></img>
       )
     else
       return (<></>);
@@ -78,23 +86,7 @@ const Likes = function({singleReprint, otherAuth}) {
 
   return (
       <>
-      {liked?<NotLikedIconJSX/>:<LikedIconJSX/>}
-
-      {Boolean(singleReprint.likeCount) ? (
-        <span>
-          <strong>{singleReprint.likeCount} Likes</strong>
-          <img
-            src={LikedIcon}
-            width="25"
-            height="25"
-            alt="Noft Count"
-          />
-        </span>
-      ) : (
-        <>
-          <strong>0 Likes</strong>
-        </>
-      )}
+        {liked?<NotLikedIconJSX/>:<LikedIconJSX/>} <span class="like-count">{likeCount}</span>
       </>
   );
 };
