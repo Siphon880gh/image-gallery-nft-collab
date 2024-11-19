@@ -19,8 +19,8 @@ const AppNavbar = () => {
           <Navbar.Brand as={Link} to='/'>
             <img
               src={NoftLogo}
-              width="65"
-              height="30"
+              width="120"
+              height="50"
               className="d-inline-block align-top"
               alt="Noft Custom Logo"
             />
