@@ -73,7 +73,7 @@ const AppNavbar = () => {
                       alt="Favorite NoFTs Icon"
                     />
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/profile/me'><img
+                  <Nav.Link as={Link} to='/profile/'><img
                     src={ProfileLogo}
                     width="50"
                     height="50"
