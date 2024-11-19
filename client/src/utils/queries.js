@@ -27,7 +27,6 @@ query {
     createdAt
     likes {
       _id
-      username
     }
     likeCount
     comments{
@@ -77,7 +76,6 @@ query author($username: String!) {
     createdAt
     likes {
       _id
-      username
     }
     likeCount
     comments{
@@ -131,7 +129,6 @@ query reprint($id: ID!){
     likeCount
     likes{
       _id
-    username
     }
     commentCount
     comments{
