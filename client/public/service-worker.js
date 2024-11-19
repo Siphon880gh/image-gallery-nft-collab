@@ -11,6 +11,8 @@ self.addEventListener("install", event => {
             const filesToCache = [
                 "/",
                 "/index.html",
+                "favicon.ico",
+                "nofttestlogo.png",
                 "/css/styles.css",
                 "/manifest.json",
                 "/service-worker.js"
