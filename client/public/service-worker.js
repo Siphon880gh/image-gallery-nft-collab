@@ -7,6 +7,7 @@ self.addEventListener("install", event => {
             // Caching path does not have to be preceded with `public/` because starting the path with `/`
             // will start off the path from wherever Express delivered the HTML route
             const filesToCache = [
+                "/",
                 "/index.html",
                 "favicon.ico",
                 "nofttestlogo.png",
@@ -17,4 +18,22 @@ self.addEventListener("install", event => {
             cache.addAll(filesToCache);
         })
     );
+});
+
+self.addEventListener("fetch", event => {
+    // Cache only non-graphQL
+    if(!event.request.url.includes("graphql")) {
+        event.respondWith(
+            caches.match(event.request).then(response => {
+                // console.log("cached:", {er: event.request, e: event});
+                return response || fetch(event.request);
+            })
+        );
+    } else {
+        event.respondWith(
+            caches.match(event.request).then(response => {
+                return fetch(event.request);
+            })
+        );
+    }
 });

@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Card } from "react-bootstrap";
 import "./Search.css";
 const Search = ({searchFilter}) => {
-  console.log(searchFilter)
+  // console.log(searchFilter)
   const { loading, data } = useQuery(GET_USERS_BY_FILTER, {
     //dumbest fix in the world -AG
     variables: {username: searchFilter?.searchFilter || "THIS_STRING_PURPOSELY_CANNOT_BE_FOUND"}
@@ -15,7 +15,7 @@ const Search = ({searchFilter}) => {
   const Results = ({users}) => {
     return (
       <div className="overlay-under">
-      {console.log({users}, {data})}
+      {/* {console.log({users}, {data})} */}
         {users.map((user, index) => (
           <div 
             className="suggestion-item"
